@@ -51,5 +51,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Prototype 4.sln"
+    "dotnet.defaultSolution": "Prototype 4.sln",
+    "[csharp]": {
+        "editor.formatOnSave": true
+    }
 }
