@@ -577,12 +577,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019999998, y: 0.019999998, z: 0.019999998}
-  m_Center: {x: 0, y: 0, z: 0.000000007450581}
+  m_Size: {x: 0.148151, y: 0.1282662, z: 0.02}
+  m_Center: {x: -0.02393942, y: -0.003059101, z: 5.306695e-19}
 --- !u!64 &307509174
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2058,12 +2058,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.020000033, y: 0.020000033, z: 0.019999998}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.148151, y: 0.1282662, z: 0.02}
+  m_Center: {x: -0.02393942, y: -0.003059101, z: 5.306695e-19}
 --- !u!64 &962538137
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2167,12 +2167,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019999996, y: 0.019999996, z: 0.019999998}
-  m_Center: {x: 0, y: -0.000000014901161, z: 0}
+  m_Size: {x: 0.148151, y: 0.1282662, z: 0.02}
+  m_Center: {x: -0.02393942, y: -0.003059101, z: 5.306695e-19}
 --- !u!64 &1039485463
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2232,12 +2232,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.020000033, y: 0.020000033, z: 0.019999998}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.148151, y: 0.1282662, z: 0.02}
+  m_Center: {x: -0.02393942, y: -0.003059101, z: 5.306695e-19}
 --- !u!64 &1102973892
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2363,12 +2363,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019999996, y: 0.019999996, z: 0.019999998}
-  m_Center: {x: 0, y: -0.000000014901161, z: 0}
+  m_Size: {x: 0.148151, y: 0.1282662, z: 0.02}
+  m_Center: {x: -0.02393942, y: -0.003059101, z: 5.306695e-19}
 --- !u!64 &1191394762
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4634,12 +4634,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.11891878, y: 0.14786534, z: 0.019999998}
-  m_Center: {x: -0.0018671275, y: -0.0012985498, z: -2.0313005e-20}
+  m_Size: {x: 0.148151, y: 0.1282662, z: 0.02}
+  m_Center: {x: -0.02393942, y: -0.003059101, z: 5.306695e-19}
 --- !u!64 &1434791258
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5403,12 +5403,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.11137298, y: 0.14940181, z: 0.019999998}
-  m_Center: {x: -0.003915507, y: -0.008260059, z: 0.0000000078027895}
+  m_Size: {x: 0.148151, y: 0.1282662, z: 0.02}
+  m_Center: {x: -0.02393942, y: -0.003059101, z: 5.306695e-19}
 --- !u!64 &1942329835
 MeshCollider:
   m_ObjectHideFlags: 0
