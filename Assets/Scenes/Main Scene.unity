@@ -1193,6 +1193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena
       objectReference: {fileID: 0}
+    - target: {fileID: 8264828688384350706, guid: b6aea6ef059af45a5a699965ee26eba6,
+        type: 3}
+      propertyPath: m_TagString
+      value: DamageBox
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1201,6 +1206,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 484933083}
+    - targetCorrespondingSourceObject: {fileID: 8264828688384350706, guid: b6aea6ef059af45a5a699965ee26eba6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1474714653}
     - targetCorrespondingSourceObject: {fileID: -7936109914358034742, guid: b6aea6ef059af45a5a699965ee26eba6,
         type: 3}
       insertIndex: -1
@@ -4293,6 +4302,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3116369807608469340, guid: b6aea6ef059af45a5a699965ee26eba6, type: 3}
+--- !u!65 &1474714653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484933078}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000033, y: 0.13570786, z: 0.019999998}
+  m_Center: {x: 0, y: 0.0027622164, z: 0}
 --- !u!64 &1488341686
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4483,6 +4513,7 @@ GameObject:
   - component: {fileID: 1567427840}
   - component: {fileID: 1567427844}
   - component: {fileID: 1567427845}
+  - component: {fileID: 1567427846}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4616,6 +4647,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!114 &1567427846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567427839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf4108f1eab6d24788e9d0b0a51caa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!64 &1591960720
 MeshCollider:
   m_ObjectHideFlags: 0
