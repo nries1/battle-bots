@@ -9,7 +9,9 @@ public class FocalController : MonoBehaviour
     private GameObject player;
     void Start()
     {
+
         player = GameObject.Find("Player");
+        MatchPlayerPosition();
     }
 
     // Update is called once per frame
@@ -20,6 +22,13 @@ public class FocalController : MonoBehaviour
     }
     void LateUpdate()
     {
-     transform.position = player.transform.position;   
+        MatchPlayerPosition();
+    }
+    void MatchPlayerPosition()
+    {
+        if (player)
+        {
+            transform.position = player.transform.position;
+        }
     }
 }
