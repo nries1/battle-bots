@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class FocalController : MonoBehaviour
+public class FocalController : NetworkBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private float rotationSpeed = 200f;
-    private GameObject player;
+    [SerializeReference] private GameObject player;
     void Start()
     {
-
-        player = GameObject.Find("Player");
+        Debug.Log("Player = " + player);
         MatchPlayerPosition();
     }
 
@@ -19,6 +19,7 @@ public class FocalController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up, horizontalInput * rotationSpeed * Time.deltaTime);
+        // Prevent focal point from inheriting player's rotation by resetting its rotation
     }
     void LateUpdate()
     {
