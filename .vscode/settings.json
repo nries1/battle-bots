@@ -51,5 +51,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "battle-bots.sln"
+    "dotnet.defaultSolution": "Battle Bots.sln",
+    "[csharp]": {
+        "editor.formatOnSave": true
+    }
 }

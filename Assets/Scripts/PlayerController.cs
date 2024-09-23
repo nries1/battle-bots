@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5.0f;
     private Rigidbody playerRb;
     private GameObject focalPoint;
+    void Awake()
+    {
+        transform.position = new Vector3(-55.3f, 2.3f, -52.4f);
+    }
     // Start is called before the first frame update
     void Start()
     {
