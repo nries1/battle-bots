@@ -121,7 +121,6 @@ namespace Kart
             transform.position = new Vector3(-5,3,-5);
             transform.position = new Vector3(-5,3,-5);
             playerAudioListener.enabled = true;
-            
         }
 
         
