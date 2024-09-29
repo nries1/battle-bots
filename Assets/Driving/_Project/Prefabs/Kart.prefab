@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 10, z: -30}
+  m_FollowOffset: {x: 0, y: 10, z: -20}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -443,8 +443,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083434488274997536}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.16018225, y: -0, z: -0, w: 0.9870875}
-  m_LocalPosition: {x: 0, y: 50, z: -150}
+  m_LocalRotation: {x: 0.22975284, y: -0.00000017893036, z: 0.00000004223971, w: 0.9732491}
+  m_LocalPosition: {x: 0, y: 50, z: -100}
   m_LocalScale: {x: 2.857143, y: 2.857143, z: 2.857143}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -627,15 +627,15 @@ MonoBehaviour:
     rightWheel: {fileID: 8605517142930081212}
     motor: 1
     steering: 0
-  maxMotorTorque: 2000
+  maxMotorTorque: 3000
   maxSpeed: 50
   maxSteeringAngle: 30
   turnCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0.75
+      time: 0.00024678744
+      value: 0.7999167
       inSlope: 2
       outSlope: 2
       tangentMode: 0
@@ -644,7 +644,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0.35173798
+      value: 0.0039596558
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -654,7 +654,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  turnStrength: 0.5
+  turnStrength: 150
   breakTorque: 10000
   driftSteerMultiplier: 1.5
   centerOfMass: {fileID: 3199380903866110551}
@@ -667,6 +667,7 @@ MonoBehaviour:
   playerCamera: {fileID: 2027016150830894598}
   playerAudioListener: {fileID: 6295228634502454541}
   isGrounded: 1
+  reconciliationCooldownTime: 1
   reconciliationThreshold: 10
 --- !u!114 &7834507768714533518
 MonoBehaviour:
@@ -740,8 +741,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5513810141233204737}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.16018225, y: -0, z: -0, w: 0.9870875}
-  m_LocalPosition: {x: 0, y: 50, z: -150}
+  m_LocalRotation: {x: 0.22975288, y: -0.00000017893039, z: 0.000000042239723, w: 0.973249}
+  m_LocalPosition: {x: 0, y: 50, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

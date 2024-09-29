@@ -8,7 +8,7 @@ namespace Kart {
         [SerializeField] Button startClientButton;
         
         void Awake() {
-             Cursor.visible = true;
+            Cursor.visible = true;
             startHostButton.onClick.AddListener(StartHost);
             startClientButton.onClick.AddListener(StartClient);
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class FocalController : NetworkBehaviour
+public class FocalController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private float rotationSpeed = 200f;

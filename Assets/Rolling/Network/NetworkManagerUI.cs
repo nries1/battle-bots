@@ -18,14 +18,17 @@ public class NetworkManagerUI : NetworkBehaviour
         serverBtn.onClick.AddListener(() =>
         {
             NetworkManager.Singleton.StartServer();
+            Hide ();
         });
         hostBtn.onClick.AddListener(() =>
         {
             NetworkManager.Singleton.StartHost();
+            Hide();
         });
         clientBtn.onClick.AddListener(() =>
         {
             NetworkManager.Singleton.StartClient();
+            Hide();
         });
     }
     // Start is called before the first frame update
@@ -37,5 +40,12 @@ public class NetworkManagerUI : NetworkBehaviour
     void Update()
     {
         playersInGameText.text = "Players in game: " + playerManagerComponent.PlayersInGame;
+    }
+    void Hide()
+    {
+        GameObject.Find("Background").SetActive(false);
+        GameObject.Find("HostButton").SetActive(false);
+        GameObject.Find("ClientButton").SetActive(false);
+        GameObject.Find("ServerButton").SetActive(false);
     }
 }

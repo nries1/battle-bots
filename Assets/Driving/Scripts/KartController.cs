@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Threading;
 using Cinemachine;
 using Unity.Netcode;
 using UnityEngine;
@@ -58,7 +59,6 @@ namespace Kart
         [SerializeField] AnimationCurve turnCurve;
         [SerializeField] float turnStrength = 1500f;
 
-
         [Header("Breaking and Drifting Attributes")]
         [SerializeField] float breakTorque = 10000f;
         [SerializeField] float driftSteerMultiplier = 1.5f;
@@ -103,7 +103,9 @@ namespace Kart
         CircularBuffer<StatePayload> serverStateBuffer;
         Queue<InputPayload> serverInputQueue;
         [Header("Netcode")]
+        [SerializeField] float reconciliationCooldownTime = 1f;
         [SerializeField] float reconciliationThreshold = 10f;
+        CountdownTimer reconciliationCooldown;
         // [SerializeField] GameObject serverCube;
         // [SerializeField] GameObject clientCube;
         // NETCODE END
@@ -119,10 +121,8 @@ namespace Kart
                 return;
             }
             transform.position = new Vector3(-5,3,-5);
-            transform.position = new Vector3(-5,3,-5);
             playerAudioListener.enabled = true;
         }
-
         
 
         void Awake() {
@@ -143,12 +143,14 @@ namespace Kart
             clientInputBuffer = new CircularBuffer<InputPayload>(k_bufferSize);
             serverStateBuffer = new CircularBuffer<StatePayload>(k_bufferSize);
             serverInputQueue = new Queue<InputPayload>();
+            reconciliationCooldown = new CountdownTimer(reconciliationCooldownTime);
         }
 
         // Every client will have a different time interval btw frames. So we need to tell our timer how long each frame took
         // so we can decide if we can tick.
         void Update() {
             timer.Update(Time.deltaTime);
+            reconciliationCooldown.Tick(Time.deltaTime);
             if (Input.GetKeyDown(KeyCode.Q)) {
                 transform.position += transform.forward * 20f;
             }
@@ -157,38 +159,23 @@ namespace Kart
         // I.e. FixedUpdate is called a set number of times per second.
         void FixedUpdate()
         {
-           if (!IsOwner) return;
            while (timer.ShouldTick()) {
             HandleClientTick();
             HandleServerTick();
            }
         }
         void HandleServerTick() {
-            if (!IsServer) return;
+            if (!IsServer || IsHost) return;
             var bufferIndex = -1;
             while (serverInputQueue.Count > 0) {
                 InputPayload inputPayload = serverInputQueue.Dequeue();
                 bufferIndex = inputPayload.tick % k_bufferSize;
-                StatePayload statePayload = SimulateMovement(inputPayload);
+                StatePayload statePayload = ProcessMovement(inputPayload);
                 // serverCube.transform.position = statePayload.position.With(y: 4);
                 serverStateBuffer.Add(statePayload, bufferIndex);
             }
             if (bufferIndex == -1) return;
             SendToClientRpc(serverStateBuffer.Get(bufferIndex));
-        }
-
-        StatePayload SimulateMovement(InputPayload inputPayload) {
-            Physics.simulationMode = SimulationMode.Script;
-            Move(inputPayload.inputVector);
-            Physics.Simulate(Time.fixedDeltaTime);
-            Physics.simulationMode = SimulationMode.FixedUpdate;
-            return new StatePayload() {
-                tick = inputPayload.tick,
-                position = transform.position,
-                rotation = transform.rotation,
-                velocity = rb.velocity,
-                angularVelocity = rb.angularVelocity
-            };
         }
 
         [ClientRpc]
@@ -198,7 +185,7 @@ namespace Kart
         }
 
         void HandleClientTick() {
-            if (!IsClient) return;
+            if (!IsClient || !IsOwner) return;
             var currentTick = timer.CurrentTick;
             var bufferIndex = currentTick % k_bufferSize;
             InputPayload inputPayload = new InputPayload() {
@@ -216,7 +203,7 @@ namespace Kart
         bool ShouldReconcile() {
             bool isNewServerState = !lastServerState.Equals(default);
             bool isLastStateUndefinedOrDifferent = lastProcessedState.Equals(default) || !lastProcessedState.Equals(lastServerState);
-            return isNewServerState && isLastStateUndefinedOrDifferent;
+            return isNewServerState && isLastStateUndefinedOrDifferent && !reconciliationCooldown.IsRunning;
         }
 
         void ReconcileState(StatePayload rewindState) {
@@ -247,6 +234,7 @@ namespace Kart
             positionError = Vector3.Distance(rewindState.position, clientStateBuffer.Get(bufferIndex).position);
             if (positionError > reconciliationThreshold) {
                 ReconcileState(rewindState);
+                reconciliationCooldown.Start();
             }
         }
 
@@ -310,9 +298,7 @@ namespace Kart
                 // gradually move (Lerp) the car up to its max speed to simulate accelaration when the user holds down the forward button
                 float targetSpeed = verticalInput * maxSpeed;
                 Vector3 forwardWithoutY = transform.forward.With(y: 0).normalized;
-                // rb.velocity = Vector3.Lerp(rb.velocity, forwardWithoutY * targetSpeed, Time.deltaTime);
-                float lerpFraction = timer.MinTimeBetweenTicks / (1f / Time.deltaTime);
-                rb.velocity = Vector3.Lerp(rb.velocity, forwardWithoutY * targetSpeed , lerpFraction);
+                rb.velocity = Vector3.Lerp(rb.velocity, forwardWithoutY * targetSpeed , timer.MinTimeBetweenTicks);
             }
 
             // Downforce -- always pushing down. But pushing down more when the car is drifting
