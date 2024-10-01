@@ -10,7 +10,7 @@ public class FocalController : MonoBehaviour
     void Start()
     {
 
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Sphere");
         MatchPlayerPosition();
     }
 
