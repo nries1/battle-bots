@@ -11,6 +11,7 @@ public class SpikePit : MonoBehaviour
     private Vector3 target;
     private bool isAscending = true;
     private bool isPaused = false;
+    [SerializeField] public int damageDealt = 20;
 
     void Start()
     {
