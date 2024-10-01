@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1451667301155467101}
   - component: {fileID: 8999047535400899610}
   - component: {fileID: 4399587839694774840}
-  - component: {fileID: 7262099023989731897}
   m_Layer: 0
   m_Name: BL WHEEL
   m_TagString: Untagged
@@ -85,45 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!146 &7262099023989731897
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363650944752207208}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0
 --- !u!1 &1566850217649309714
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +115,8 @@ Transform:
   m_Children:
   - {fileID: 8671813887301369982}
   - {fileID: 5512905969794537044}
+  - {fileID: 7110568150553409432}
+  - {fileID: 7481266284238058786}
   m_Father: {fileID: 8993841753454614509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1785783500884065675
@@ -168,7 +130,6 @@ GameObject:
   - component: {fileID: 4921776480197476553}
   - component: {fileID: 7693639809769332623}
   - component: {fileID: 3259708862365216224}
-  - component: {fileID: 6420018128843383030}
   m_Layer: 0
   m_Name: FL WHEEL
   m_TagString: Untagged
@@ -242,45 +203,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!146 &6420018128843383030
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785783500884065675}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0
 --- !u!1 &2542258624455709401
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +301,6 @@ GameObject:
   - component: {fileID: 1242475909460063615}
   - component: {fileID: 4090400885163929611}
   - component: {fileID: 1733131578326351826}
-  - component: {fileID: 5066649784412489849}
   m_Layer: 0
   m_Name: BR WHEEL
   m_TagString: Untagged
@@ -400,7 +321,7 @@ Transform:
   m_LocalScale: {x: 32.18391, y: 32.18391, z: 81.88635}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5512905969794537044}
+  m_Father: {fileID: 7481266284238058786}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4090400885163929611
 MeshFilter:
@@ -453,13 +374,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!146 &5066649784412489849
+--- !u!1 &3870348004840366759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7110568150553409432}
+  - component: {fileID: 8772450498943545552}
+  m_Layer: 0
+  m_Name: FR Wheel Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7110568150553409432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3870348004840366759}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7814161010392253540}
+  m_Father: {fileID: 6884007864088340900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!146 &8772450498943545552
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3510096569588556971}
+  m_GameObject: {fileID: 3870348004840366759}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
@@ -503,7 +457,7 @@ GameObject:
   - component: {fileID: 5512905969794537044}
   - component: {fileID: 7189337785479123922}
   m_Layer: 0
-  m_Name: Rear Wheels
+  m_Name: BL Wheel Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -523,7 +477,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1451667301155467101}
-  - {fileID: 1242475909460063615}
   m_Father: {fileID: 6884007864088340900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &7189337785479123922
@@ -576,7 +529,7 @@ GameObject:
   - component: {fileID: 8671813887301369982}
   - component: {fileID: 1151760007647341641}
   m_Layer: 0
-  m_Name: Front Wheels
+  m_Name: FL Wheel Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,7 +549,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4921776480197476553}
-  - {fileID: 7814161010392253540}
   m_Father: {fileID: 6884007864088340900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &1151760007647341641
@@ -649,7 +601,6 @@ GameObject:
   - component: {fileID: 7814161010392253540}
   - component: {fileID: 8966427113372127428}
   - component: {fileID: 1875616077711168938}
-  - component: {fileID: 3711126147762309328}
   m_Layer: 0
   m_Name: FR WHEEL
   m_TagString: Untagged
@@ -670,7 +621,7 @@ Transform:
   m_LocalScale: {x: 32.18391, y: 32.18391, z: 81.88635}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8671813887301369982}
+  m_Father: {fileID: 7110568150553409432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8966427113372127428
 MeshFilter:
@@ -723,13 +674,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!146 &3711126147762309328
+--- !u!1 &8016169076180215288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7481266284238058786}
+  - component: {fileID: 6514526003534340683}
+  m_Layer: 0
+  m_Name: BR Wheel Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7481266284238058786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8016169076180215288}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1242475909460063615}
+  m_Father: {fileID: 6884007864088340900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!146 &6514526003534340683
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4544368300124198464}
+  m_GameObject: {fileID: 8016169076180215288}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
