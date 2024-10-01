@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,10 +10,17 @@ public class PlayerHealth : MonoBehaviour {
     [SerializeField] public int maxHealth = 100; // Maximum health the player can have
     public int currentHealth;
     [SerializeField] TextMeshPro healthBarComponent;
+    private bool hasPowerUp = false;
+    private Renderer componentRenderer;
+    private Color initialColor;
+    private SpawnManager spawnManager;
 
     void Start()
     {
         currentHealth = maxHealth; // Initialize current health to max health
+        componentRenderer = GetComponent<Renderer>();
+        initialColor = componentRenderer.material.color;
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
     }
 
     // Method to add HP
@@ -23,19 +31,28 @@ public class PlayerHealth : MonoBehaviour {
         {
             currentHealth = maxHealth;
         }
-        Debug.Log("Current Health: " + currentHealth);
     }
     public void OnTriggerEnter(Collider other)
-
     {
+        HandleDamageCollision(other);
+        HandlePowerupCollision(other);
+    }
+
+    void HandleDamageCollision(Collider other) {
+        if (!other.gameObject.CompareTag("DamageBox")) return;
         GameObject otherGameObject = other.GameObject();
         int damageDealt = otherGameObject.GetComponent<DamageComponent>().damageDealt;
-        Debug.Log("collided with " + otherGameObject.name);
-        Debug.Log("Damage to deal = " + damageDealt);
-        if (other.gameObject.CompareTag("DamageBox"))
-        {
-            TakeDamage(damageDealt);
-        }
+        TakeDamage(damageDealt);
+    }
+    void HandlePowerupCollision(Collider other) {
+        if (!other.gameObject.CompareTag("PowerUp")) return;
+        StartCoroutine(PowerUpCountdown());
+    }
+
+    IEnumerator PowerUpCountdown() {
+        hasPowerUp = true;
+        yield return new WaitForSeconds(spawnManager.powerUpDuration);
+        hasPowerUp = false;
     }
     // Method to take damage
     public void TakeDamage(int damage)
@@ -57,5 +74,14 @@ public class PlayerHealth : MonoBehaviour {
     private void GameOver()
     {
         SceneManager.LoadScene("Game Over");
+    }
+
+    void FixedUpdate()
+    {
+        if (hasPowerUp) {
+            componentRenderer.material.color = Color.green;
+        } else {
+            componentRenderer.material.color = initialColor;
+        }
     }
 }
