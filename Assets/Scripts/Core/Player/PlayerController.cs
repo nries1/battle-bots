@@ -7,36 +7,45 @@ using UnityEngine.SceneManagement; // For loading the game over scene
 
 public class PlayerController : MonoBehaviour {
 
-    [SerializeField] public int maxHealth = 100; // Maximum health the player can have
-    [SerializeField] private float speed = 5.0f;
-    public int currentHealth;
+    [Header("References")]
+    [SerializeField] private InputReader inputReader;
     [SerializeField] TextMeshPro healthBarComponent;
-    private Rigidbody playerRb;
-    // [SerializeField] private GameObject focalPoint;
-    [SerializeField] private SpawnManager spawnManager;
     [SerializeField] private GameObject sawBlades;
-    private bool hasPowerUp = false;
-    private Renderer componentRenderer;
-    private Color initialColor;
+    private SpawnManager spawnManager;
 
+
+
+    [Header("Settings")]
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float turningRate = 270f; // 270 deg / sec
+    [SerializeField] public int maxHealth = 100; // Maximum health the player can have
+    
+    public int currentHealth;    
+    private bool hasPowerUp = false;
+    private Vector2 previousMovementInput;
     private Coroutine activePowerupCountdown;
 
     void Start()
     {
+        inputReader.MoveEvent += HandleMove;
+        inputReader.PrimaryFireEvent += HandleFire;
         currentHealth = maxHealth; // Initialize current health to max health
-        componentRenderer = GetComponent<Renderer>();
-        initialColor = componentRenderer.material.color;
-        playerRb = GetComponent<Rigidbody>();
+        spawnManager = GetComponent<SpawnManager>();
+    }
+    public void HandleMove(Vector2 input) {
+        Debug.Log("Registered Movement!");
+        previousMovementInput = input;
+
+    }
+    public void HandleFire(bool isFiring) {
+        Debug.Log("Fire Effects not implemented");
     }
 
     // Method to add HP
     public void AddHealth(int amount)
     {
-        currentHealth += amount;
-        if (currentHealth > maxHealth) // Prevent exceeding max health
-        {
-            currentHealth = maxHealth;
-        }
+        // Prevent exceeding max health
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -88,7 +97,7 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate()
     {
         sawBlades.SetActive(hasPowerUp);
-        float forwardInput = Input.GetAxis("Vertical");
-        // playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+        transform.Translate(Vector3.forward * previousMovementInput.y * moveSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * previousMovementInput.x * turningRate * Time.deltaTime);
     }
 }

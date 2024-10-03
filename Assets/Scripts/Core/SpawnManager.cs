@@ -13,14 +13,17 @@ public class SpawnManager : MonoBehaviour
         int bottomRampZPos = -28;
         int YposAboveRamp = 3;
         int topRampZPos = -92;
+        int leftRampXPos = -25;
+        int midRampXPos = -40;
+        int rightRampXPos = -55;
         spawnPositions = new List<Vector3>
         {
-            new Vector3(-25, YposAboveRamp, bottomRampZPos),
-            new Vector3(-40, YposAboveRamp, bottomRampZPos),
-            new Vector3(-55, YposAboveRamp, bottomRampZPos),
-            new Vector3(-25, YposAboveRamp, topRampZPos),
-            new Vector3(-40, YposAboveRamp, topRampZPos),
-            new Vector3(-55, YposAboveRamp, topRampZPos)
+            new Vector3(leftRampXPos, YposAboveRamp, bottomRampZPos),
+            new Vector3(midRampXPos, YposAboveRamp, bottomRampZPos),
+            new Vector3(rightRampXPos, YposAboveRamp, bottomRampZPos),
+            new Vector3(leftRampXPos, YposAboveRamp, topRampZPos),
+            new Vector3(midRampXPos, YposAboveRamp, topRampZPos),
+            new Vector3(rightRampXPos, YposAboveRamp, topRampZPos)
         };
         InvokeRepeating("SpawnPowerup", 2f, powerUpDuration);
     }
