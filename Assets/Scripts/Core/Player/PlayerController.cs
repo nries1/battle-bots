@@ -12,8 +12,9 @@ public class PlayerController : MonoBehaviour {
     public int currentHealth;
     [SerializeField] TextMeshPro healthBarComponent;
     private Rigidbody playerRb;
-    [SerializeField] private GameObject focalPoint;
+    // [SerializeField] private GameObject focalPoint;
     [SerializeField] private SpawnManager spawnManager;
+    [SerializeField] private GameObject sawBlades;
     private bool hasPowerUp = false;
     private Renderer componentRenderer;
     private Color initialColor;
@@ -86,12 +87,8 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (hasPowerUp) {
-            componentRenderer.material.color = Color.green;
-        } else {
-            componentRenderer.material.color = initialColor;
-        }
+        sawBlades.SetActive(hasPowerUp);
         float forwardInput = Input.GetAxis("Vertical");
-        playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+        // playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
     }
 }
