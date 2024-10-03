@@ -1,9 +1,10 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement; // For loading the game over scene
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements; // For loading the game over scene
 
 public class PlayerController : MonoBehaviour {
 
@@ -24,6 +25,25 @@ public class PlayerController : MonoBehaviour {
     private bool hasPowerUp = false;
     private Vector2 previousMovementInput;
     private Coroutine activePowerupCountdown;
+    private struct StartPosition {
+        public Vector3 position;
+        public int yRotation;
+        public StartPosition(Vector3 posVector, int yRotation) {
+            this.position = posVector;
+            this.yRotation = yRotation;
+        }
+    }
+    private List<StartPosition> startPositions = new List<StartPosition>
+        {
+            // right
+            new StartPosition(new Vector3(-24, 2, -60), -90),
+            // left
+            new StartPosition(new Vector3(-55, 2, -60), 90),
+            // top
+            new StartPosition(new Vector3(-40, 2, -46), 180),
+            //bottom
+            new StartPosition(new Vector3(-40, 2, -73), 0)
+        };
 
     void Start()
     {
@@ -31,6 +51,10 @@ public class PlayerController : MonoBehaviour {
         inputReader.PrimaryFireEvent += HandleFire;
         currentHealth = maxHealth; // Initialize current health to max health
         spawnManager = GetComponent<SpawnManager>();
+        int randomSpawnIndex = Random.Range(0, startPositions.Count);
+        StartPosition startPos = startPositions[randomSpawnIndex];
+        transform.position = startPos.position;
+        transform.Rotate(0, startPos.yRotation, 0);
     }
     public void HandleMove(Vector2 input) {
         Debug.Log("Registered Movement!");
