@@ -442,111 +442,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealt: 100
---- !u!1001 &261049778
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -29
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946376652622757871, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: sawBlades
-      value: 
-      objectReference: {fileID: 261049780}
-    - target: {fileID: 4946376652622757871, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: spawnManager
-      value: 
-      objectReference: {fileID: 1571601171}
-    - target: {fileID: 4946376652622757871, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: healthBarComponent
-      value: 
-      objectReference: {fileID: 261049779}
-    - target: {fileID: 5318020149501153182, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_Name
-      value: Cybertruck
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5136247110912914203, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-  m_SourcePrefab: {fileID: 100100000, guid: 1070d4e993b9b4746bf793083d63126b, type: 3}
---- !u!114 &261049779 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4178172820480346083, guid: 1070d4e993b9b4746bf793083d63126b,
-    type: 3}
-  m_PrefabInstance: {fileID: 261049778}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &261049780 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2980340008124151180, guid: 1070d4e993b9b4746bf793083d63126b,
-    type: 3}
-  m_PrefabInstance: {fileID: 261049778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &267539626 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8008402341457290671, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2517,6 +2412,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealt: 100
+--- !u!1001 &1688411590
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318020149501153182, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: m_Name
+      value: Cybertruck
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863183572273774754, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      propertyPath: spawnManager
+      value: 
+      objectReference: {fileID: 1571601171}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5136247110912914203, guid: 1070d4e993b9b4746bf793083d63126b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 1070d4e993b9b4746bf793083d63126b, type: 3}
 --- !u!1 &1709655679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3682776493994916074, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -4058,4 +4030,4 @@ SceneRoots:
   - {fileID: 1253223556}
   - {fileID: 1571601170}
   - {fileID: 2060899888}
-  - {fileID: 261049778}
+  - {fileID: 1688411590}
