@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
     private bool hasPowerUp = false;
     private Vector2 previousMovementInput;
     private Coroutine activePowerupCountdown;
+   
     private struct StartPosition {
         public Vector3 position;
         public int yRotation;
@@ -89,7 +90,22 @@ public class PlayerController : MonoBehaviour {
         }
         string powerUpName = other.GetComponent<PowerUpController>().name;
         Debug.Log(powerUpName);
+        switch(powerUpName) {
+            case "Health PU":
+                HandleHealthPowerup();
+                break;
+            case "Saw PU":
+                HandleSawPowerup();
+                break;
+        }
+    }
+
+    void HandleSawPowerup() {
         activePowerupCountdown = StartCoroutine(PowerUpCountdown());
+    }
+
+    private void HandleHealthPowerup() {
+        AddHealth(40);
     }
 
     IEnumerator PowerUpCountdown() {
