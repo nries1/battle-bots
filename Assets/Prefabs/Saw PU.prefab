@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4949150030306476231}
   - component: {fileID: 7512432294131813661}
   m_Layer: 0
-  m_Name: Saw PU Icon
+  m_Name: Saw PU
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.021668851, y: 0.021668851, z: 0.020000128}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.034745913, y: 0.021668851, z: 1.4410586}
+  m_Center: {x: -0.0016239511, y: 2.6741464e-19, z: -0.030108213}
 --- !u!114 &7512432294131813661
 MonoBehaviour:
   m_ObjectHideFlags: 0

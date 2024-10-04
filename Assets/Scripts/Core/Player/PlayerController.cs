@@ -4,7 +4,6 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements; // For loading the game over scene
 
 public class PlayerController : MonoBehaviour {
 
@@ -12,9 +11,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private InputReader inputReader;
     [SerializeField] TextMeshPro healthBarComponent;
     [SerializeField] private GameObject sawBlades;
+    private GameObject spawnManagerComponent;
     private SpawnManager spawnManager;
-
-
 
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 10f;
@@ -50,7 +48,8 @@ public class PlayerController : MonoBehaviour {
         inputReader.MoveEvent += HandleMove;
         inputReader.PrimaryFireEvent += HandleFire;
         currentHealth = maxHealth; // Initialize current health to max health
-        spawnManager = GetComponent<SpawnManager>();
+        spawnManagerComponent = GameObject.Find("Spawn Manager");
+        spawnManager = spawnManagerComponent.GetComponent<SpawnManager>();
         int randomSpawnIndex = Random.Range(0, startPositions.Count);
         StartPosition startPos = startPositions[randomSpawnIndex];
         transform.position = startPos.position;
@@ -88,11 +87,15 @@ public class PlayerController : MonoBehaviour {
         if (!activePowerupCountdown.IsUnityNull()) {
             StopCoroutine(activePowerupCountdown);
         }
+        string powerUpName = other.GetComponent<PowerUpController>().name;
+        Debug.Log(powerUpName);
         activePowerupCountdown = StartCoroutine(PowerUpCountdown());
     }
 
     IEnumerator PowerUpCountdown() {
         hasPowerUp = true;
+        Debug.Log("powerup duration");
+        Debug.Log(spawnManager);
         yield return new WaitForSeconds(spawnManager.powerUpDuration);
         hasPowerUp = false;
     }
