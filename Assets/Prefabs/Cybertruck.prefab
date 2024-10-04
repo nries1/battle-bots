@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 5457741712101960068}
   m_Layer: 0
   m_Name: L Saw Blade
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1127,10 +1127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 0453ab3b230054af783d30a3647f5227, type: 2}
-  bodyTransform: {fileID: 4793720660034753828}
   healthBarComponent: {fileID: 4178172820480346083}
   sawBlades: {fileID: 2980340008124151180}
-  spawnManager: {fileID: 0}
   moveSpeed: 10
   turningRate: 270
   maxHealth: 100
@@ -1147,9 +1145,10 @@ GameObject:
   - component: {fileID: 1714445723866676315}
   - component: {fileID: 3882376396673277674}
   - component: {fileID: 820222630126136195}
+  - component: {fileID: 6858461258637452716}
   m_Layer: 0
   m_Name: R Saw Blade
-  m_TagString: Untagged
+  m_TagString: DamageBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1241,6 +1240,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5926289735269292146, guid: d8674fa2747b348518a8061d3c00dd6a, type: 3}
+--- !u!114 &6858461258637452716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480921829299815919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 10
 --- !u!1 &5770527878498142067
 GameObject:
   m_ObjectHideFlags: 0

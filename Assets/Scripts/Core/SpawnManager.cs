@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     private List<Vector3> spawnPositions;
-    [SerializeField] private GameObject powerupPrefab;
+    [SerializeField] private GameObject[] powerupPrefabs;
     [SerializeField] public float powerUpDuration = 10f;
     // Start is called before the first frame update
     void Start()
@@ -29,10 +29,11 @@ public class SpawnManager : MonoBehaviour
     }
 
     private void SpawnPowerup() {
-        int randomIndex = Random.Range(0, spawnPositions.Count);
-        Vector3 randomSpawnLocation = spawnPositions[randomIndex];
-        GameObject newSpawn = Instantiate(powerupPrefab, randomSpawnLocation, Quaternion.identity);
-        Debug.Log("Spawning Powerup");
+        int randomPosIndex = Random.Range(0, spawnPositions.Count);
+        Vector3 randomSpawnLocation = spawnPositions[randomPosIndex];
+        int randomPrefabIndex = Random.Range(0, powerupPrefabs.Length);
+        GameObject prefab = powerupPrefabs[randomPrefabIndex];
+        GameObject newSpawn = Instantiate(prefab, randomSpawnLocation, Quaternion.identity);
         Destroy(newSpawn, powerUpDuration);
     }
     

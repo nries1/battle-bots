@@ -2249,8 +2249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52ba6f40124c4074b95e4daf44ef523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupPrefab: {fileID: 6373185442575409453, guid: 0d2872a49eb874106a9e898fab78241e,
-    type: 3}
+  powerupPrefabs:
+  - {fileID: 6373185442575409453, guid: 0d2872a49eb874106a9e898fab78241e, type: 3}
+  - {fileID: 6498587221738898539, guid: 0847c1f79862648f693ef44fcb5be70a, type: 3}
   powerUpDuration: 20
 --- !u!1 &1575973088 stripped
 GameObject:
@@ -2448,7 +2449,7 @@ PrefabInstance:
     - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 5.27
       objectReference: {fileID: 0}
     - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
         type: 3}
