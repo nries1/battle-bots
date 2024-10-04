@@ -95,13 +95,9 @@ public class PlayerController : MonoBehaviour {
                 HandleHealthPowerup();
                 break;
             case "Saw PU":
-                HandleSawPowerup();
+                sawBlades.SetActive(true);
                 break;
         }
-    }
-
-    void HandleSawPowerup() {
-        activePowerupCountdown = StartCoroutine(PowerUpCountdown());
     }
 
     private void HandleHealthPowerup() {
@@ -110,8 +106,6 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator PowerUpCountdown() {
         hasPowerUp = true;
-        Debug.Log("powerup duration");
-        Debug.Log(spawnManager);
         yield return new WaitForSeconds(spawnManager.powerUpDuration);
         hasPowerUp = false;
     }
@@ -139,7 +133,6 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        sawBlades.SetActive(hasPowerUp);
         transform.Translate(Vector3.forward * previousMovementInput.y * moveSpeed * Time.deltaTime);
         transform.Rotate(Vector3.up * previousMovementInput.x * turningRate * Time.deltaTime);
     }

@@ -10,10 +10,6 @@ public class PowerUpController : MonoBehaviour
         target = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         startPos = transform.position;
     }
-    void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);
-    }
     void LateUpdate()
     {
         // rotate around the y axis

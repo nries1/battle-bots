@@ -33,8 +33,7 @@ public class SpawnManager : MonoBehaviour
         Vector3 randomSpawnLocation = spawnPositions[randomPosIndex];
         int randomPrefabIndex = Random.Range(0, powerupPrefabs.Length);
         GameObject prefab = powerupPrefabs[randomPrefabIndex];
-        GameObject newSpawn = Instantiate(prefab, randomSpawnLocation, Quaternion.identity);
-        Destroy(newSpawn, powerUpDuration);
+        Instantiate(prefab, randomSpawnLocation, Quaternion.identity);
     }
     
 }
