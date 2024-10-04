@@ -3,7 +3,6 @@ using UnityEngine;
 public class PowerUpController : MonoBehaviour
 {
     private bool ascending = true;
-    private float bounceSpeed = 0.5f;
     private Vector3 target;
     private Vector3 startPos;
     void Start()
