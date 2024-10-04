@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private InputReader inputReader;
     [SerializeField] TextMeshPro healthBarComponent;
     [SerializeField] private GameObject sawBlades;
-    private GameObject spawnManagerComponent;
-    private SpawnManager spawnManager;
 
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 10f;
@@ -20,9 +18,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] public int maxHealth = 100; // Maximum health the player can have
     
     public int currentHealth;    
-    private bool hasPowerUp = false;
     private Vector2 previousMovementInput;
-    private Coroutine activePowerupCountdown;
    
     private struct StartPosition {
         public Vector3 position;
@@ -49,8 +45,6 @@ public class PlayerController : MonoBehaviour {
         inputReader.MoveEvent += HandleMove;
         inputReader.PrimaryFireEvent += HandleFire;
         currentHealth = maxHealth; // Initialize current health to max health
-        spawnManagerComponent = GameObject.Find("Spawn Manager");
-        spawnManager = spawnManagerComponent.GetComponent<SpawnManager>();
         int randomSpawnIndex = Random.Range(0, startPositions.Count);
         StartPosition startPos = startPositions[randomSpawnIndex];
         transform.position = startPos.position;
@@ -85,9 +79,6 @@ public class PlayerController : MonoBehaviour {
     }
     void HandlePowerupCollision(Collider other) {
         if (!other.gameObject.CompareTag("PowerUp")) return;
-        if (!activePowerupCountdown.IsUnityNull()) {
-            StopCoroutine(activePowerupCountdown);
-        }
         string powerUpName = other.GetComponent<PowerUpController>().name;
         Debug.Log(powerUpName);
         switch(powerUpName) {
@@ -95,7 +86,7 @@ public class PlayerController : MonoBehaviour {
                 HandleHealthPowerup();
                 break;
             case "Saw PU":
-                sawBlades.SetActive(true);
+                HandleSawPowerup();
                 break;
         }
     }
@@ -103,12 +94,10 @@ public class PlayerController : MonoBehaviour {
     private void HandleHealthPowerup() {
         AddHealth(40);
     }
-
-    IEnumerator PowerUpCountdown() {
-        hasPowerUp = true;
-        yield return new WaitForSeconds(spawnManager.powerUpDuration);
-        hasPowerUp = false;
+    private void HandleSawPowerup() {
+        sawBlades.SetActive(true);
     }
+
     // Method to take damage
     public void TakeDamage(int damage)
     {
