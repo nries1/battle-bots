@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private InputReader inputReader;
     [SerializeField] TextMeshPro healthBarComponent;
     [SerializeField] private GameObject sawBlades;
+    [SerializeField] private GameObject blades;
+    [SerializeField] private GameObject cattleCatcher;
 
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 10f;
@@ -60,15 +62,14 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Method to add HP
-    public void AddHealth(int amount)
+    public int AddHealth(int amount)
     {
         // Prevent exceeding max health
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        return Mathf.Min(currentHealth + amount, maxHealth);
     }
     public void OnTriggerEnter(Collider other)
     {
         HandleDamageCollision(other);
-        HandlePowerupCollision(other);
     }
 
     void HandleDamageCollision(Collider other) {
@@ -77,41 +78,55 @@ public class PlayerController : MonoBehaviour {
         int damageDealt = otherGameObject.GetComponent<DamageComponent>().damageDealt;
         TakeDamage(damageDealt);
     }
-    void HandlePowerupCollision(Collider other) {
-        if (!other.gameObject.CompareTag("PowerUp")) return;
-        string powerUpName = other.GetComponent<PowerUpController>().name;
-        Debug.Log(powerUpName);
+    public void HandlePowerUpCollision(string powerUpName) {
+        // if (!other.gameObject.CompareTag("PowerUp")) return;
+        // string powerUpName = other.GetComponent<PowerUpController>().name;
+        Debug.Log("Player receiving " + powerUpName);
         switch(powerUpName) {
-            case "Health PU":
-                HandleHealthPowerup();
+            case "Health":
+                Debug.Log("Received Health");
+                HandleHealthPowerUp();
                 break;
-            case "Saw PU":
-                HandleSawPowerup();
+            case "Saws":
+                Debug.Log("Received Saw");
+                HandleSawPowerUp();
+                break;
+            case "Blades":
+                Debug.Log("Received Blades");
+                blades.SetActive(true);
+                break;
+            case "CattleCatcher":
+                Debug.Log("Received CattleCatcher");
+                cattleCatcher.SetActive(true);
                 break;
         }
     }
 
-    private void HandleHealthPowerup() {
-        AddHealth(40);
+    private void SetHealth(int health) {
+        currentHealth = health;
+        float ratioHealth = (float)currentHealth / maxHealth;
+        healthBarComponent.text = Mathf.RoundToInt(ratioHealth * 100) + "%";
     }
-    private void HandleSawPowerup() {
+
+    private void HandleHealthPowerUp() {
+        int targetHealth = AddHealth(40);
+        SetHealth(targetHealth);
+    }
+    private void HandleSawPowerUp() {
+        Debug.Log("Setting SAWS ACTIVE");
         sawBlades.SetActive(true);
     }
 
     // Method to take damage
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        SetHealth(Mathf.Max(currentHealth - damage, 0));
         if (currentHealth <= 0) // Check if health reaches 0 or below
         {
-            currentHealth = 0;
             Debug.Log("Player has died!");
             GameOver(); // Call game over method
             return;
         }
-        float ratioHealth = (float)currentHealth / maxHealth;
-        healthBarComponent.text = Mathf.RoundToInt(ratioHealth * 100) + "%";
-        Debug.Log("Current Health: " + currentHealth);
     }
 
     // Game over method
@@ -124,5 +139,6 @@ public class PlayerController : MonoBehaviour {
     {
         transform.Translate(Vector3.forward * previousMovementInput.y * moveSpeed * Time.deltaTime);
         transform.Rotate(Vector3.up * previousMovementInput.x * turningRate * Time.deltaTime);
+        
     }
 }

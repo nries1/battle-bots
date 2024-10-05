@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3521852029913003129
+--- !u!1 &3292125026236993204
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2625839197811737716}
-  - component: {fileID: 4576301931872887273}
-  - component: {fileID: 8697407537612305237}
-  - component: {fileID: 1328836639328934043}
-  - component: {fileID: -4238912441641966356}
-  - component: {fileID: 2228015569367445473}
-  - component: {fileID: 2809317353228369513}
+  - component: {fileID: 6391824764561362956}
+  - component: {fileID: 6635550842789388621}
+  - component: {fileID: 4852935351517468522}
+  - component: {fileID: 7395514835228472667}
+  - component: {fileID: 1781469012394067733}
+  - component: {fileID: -1034966097932178467}
+  - component: {fileID: 2874875617136721842}
   m_Layer: 0
-  m_Name: Health PU
+  m_Name: Cattle Catcher PU
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2625839197811737716
+--- !u!4 &6391824764561362956
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3521852029913003129}
+  m_GameObject: {fileID: 3292125026236993204}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -2.097909, y: 0.75890523, z: -0.085834965}
-  m_LocalScale: {x: 25.000004, y: 1.25, z: 25.000004}
+  m_LocalPosition: {x: -4.651052, y: 1.391441, z: 0.25609165}
+  m_LocalScale: {x: 91.4496, y: 1.828992, z: 21.94791}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4576301931872887273
+--- !u!33 &6635550842789388621
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3521852029913003129}
-  m_Mesh: {fileID: 5704096726077895246, guid: 20df69556482440f0b288cf608a031d7, type: 3}
---- !u!23 &8697407537612305237
+  m_GameObject: {fileID: 3292125026236993204}
+  m_Mesh: {fileID: -516054350821073229, guid: 20df69556482440f0b288cf608a031d7, type: 3}
+--- !u!23 &4852935351517468522
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3521852029913003129}
+  m_GameObject: {fileID: 3292125026236993204}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -65,9 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1560434069121511770, guid: 20df69556482440f0b288cf608a031d7, type: 3}
-  - {fileID: -8167432812282483939, guid: 20df69556482440f0b288cf608a031d7, type: 3}
-  - {fileID: 3446786541995041196, guid: 20df69556482440f0b288cf608a031d7, type: 3}
+  - {fileID: -2603747578493268616, guid: 20df69556482440f0b288cf608a031d7, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,51 +87,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1328836639328934043
+--- !u!114 &7395514835228472667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3521852029913003129}
+  m_GameObject: {fileID: 3292125026236993204}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6640157894cd3415aa9092113d140a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 20
---- !u!114 &-4238912441641966356
+--- !u!114 &1781469012394067733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3521852029913003129}
+  m_GameObject: {fileID: 3292125026236993204}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03fa5c782c0664495b80562644565080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2228015569367445473
+--- !u!114 &-1034966097932178467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3521852029913003129}
+  m_GameObject: {fileID: 3292125026236993204}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c558435d937548f58da05b72e3757c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpName: Health
---- !u!65 &2809317353228369513
+  powerUpName: CattleCatcher
+--- !u!65 &2874875617136721842
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3521852029913003129}
+  m_GameObject: {fileID: 3292125026236993204}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -146,5 +144,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.11798986, y: 1.2720517, z: 0.076016285}
-  m_Center: {x: 0.0050782724, y: -0.24103002, z: 0.010483764}
+  m_Size: {x: 0.026645793, y: 0.71266866, z: 0.06749525}
+  m_Center: {x: -0.00081768417, y: 0.13996343, z: -0.0034736712}

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PowerUpController : MonoBehaviour
 {
+    [SerializeField] private string powerUpName;
     private bool ascending = true;
     private Vector3 target;
     private Vector3 startPos;
@@ -26,5 +27,11 @@ public class PowerUpController : MonoBehaviour
             ascending = true;
         }
     }
-
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collided From Powerup");
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player == null) return;
+        player.HandlePowerUpCollision(powerUpName);
+    }
 }

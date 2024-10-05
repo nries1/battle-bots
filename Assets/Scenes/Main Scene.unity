@@ -1731,6 +1731,78 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.019999998, y: 0.019999996, z: 0.3200013}
   m_Center: {x: 0, y: -8.326632e-18, z: 0.14999923}
+--- !u!1001 &1198453910
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1193406376601282206, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_Name
+      value: Cybertruck
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.7248812
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5000105
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.010864
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2289039401998638330, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 7404d8563deae4ac0915fb6cc9efb229, type: 3}
 --- !u!1 &1205181666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2161421446546550195, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2250,8 +2322,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupPrefabs:
-  - {fileID: 6373185442575409453, guid: 0d2872a49eb874106a9e898fab78241e, type: 3}
-  - {fileID: 6498587221738898539, guid: 0847c1f79862648f693ef44fcb5be70a, type: 3}
+  - {fileID: 3521852029913003129, guid: 0847c1f79862648f693ef44fcb5be70a, type: 3}
+  - {fileID: 8172926760783425970, guid: b6a296b1da64f491b86ae5e5505451a5, type: 3}
+  - {fileID: 3292125026236993204, guid: 82ca8be8cd9944b8e84eae347b7c5ee8, type: 3}
+  - {fileID: 6140650969894841678, guid: 0e7057b3207b04eafa6c5635841fe9fc, type: 3}
   powerUpDuration: 20
 --- !u!1 &1575973088 stripped
 GameObject:
@@ -2413,103 +2487,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealt: 100
---- !u!1001 &1688411590
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4068342991801713991, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4068342991801713991, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4068342991801713991, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4068342991801713991, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -21
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -67.29886
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4793720660034753828, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5318020149501153182, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: m_Name
-      value: Cybertruck
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863183572273774754, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      propertyPath: spawnManager
-      value: 
-      objectReference: {fileID: 1571601171}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5136247110912914203, guid: 1070d4e993b9b4746bf793083d63126b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-  m_SourcePrefab: {fileID: 100100000, guid: 1070d4e993b9b4746bf793083d63126b, type: 3}
 --- !u!1 &1709655679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3682776493994916074, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -4051,4 +4028,4 @@ SceneRoots:
   - {fileID: 1253223556}
   - {fileID: 1571601170}
   - {fileID: 2060899888}
-  - {fileID: 1688411590}
+  - {fileID: 1198453910}
