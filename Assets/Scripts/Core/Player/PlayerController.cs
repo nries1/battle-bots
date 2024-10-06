@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         HandleDamageCollision(other);
+        // HandlePowerUpCollision(other);
     }
 
     void HandleDamageCollision(Collider other) {
