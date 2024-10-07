@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerControls : NetworkBehaviour
 {
     [Header("References")]
     [SerializeField] private InputReader inputReader;
@@ -12,7 +13,7 @@ public class PlayerControls : MonoBehaviour
     private Vector2 previousMovementInput;
 
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
         inputReader.MoveEvent += HandleMove;
         inputReader.PrimaryFireEvent += HandleFire;
@@ -26,7 +27,7 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         transform.Translate(Vector3.forward * previousMovementInput.y * moveSpeed * Time.deltaTime);
         transform.Rotate(Vector3.up * previousMovementInput.x * turningRate * Time.deltaTime);

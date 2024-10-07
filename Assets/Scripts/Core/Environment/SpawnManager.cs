@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : NetworkBehaviour
 {
     private List<Vector3> spawnPositions;
     [SerializeField] private GameObject[] powerupPrefabs;
@@ -29,6 +29,7 @@ public class SpawnManager : MonoBehaviour
     }
 
     private void SpawnPowerup() {
+        Debug.Log("Spawning powerup");
         int randomPosIndex = Random.Range(0, spawnPositions.Count);
         Vector3 randomSpawnLocation = spawnPositions[randomPosIndex];
         int randomPrefabIndex = Random.Range(0, powerupPrefabs.Length);

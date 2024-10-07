@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class HealthModifier : MonoBehaviour
 {
-    // Amount of damage dealt, or health restored
     [SerializeField] public int modifier;
     void OnTriggerEnter(Collider other)
     {

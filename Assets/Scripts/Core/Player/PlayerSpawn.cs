@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerSpawn : MonoBehaviour
+public class PlayerSpawn : NetworkBehaviour
 {
 
     private struct StartPosition {
@@ -25,11 +25,16 @@ public class PlayerSpawn : MonoBehaviour
             new StartPosition(new Vector3(-40, 2, -73), 0)
         };
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
+        if (!IsOwner) return;
         int randomSpawnIndex = Random.Range(0, startPositions.Count);
         StartPosition startPos = startPositions[randomSpawnIndex];
         transform.position = startPos.position;
         transform.Rotate(0, startPos.yRotation, 0);
+    }
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
     }
 }

@@ -1,16 +1,17 @@
 using TMPro;
-using Unity.VisualScripting;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : NetworkBehaviour
 {
     [SerializeField] public int maxHealth = 100; // Maximum health the player can have
     [SerializeField] TextMeshPro healthBarComponent;
 
     private int currentHealth;    
 
-    private void Start() {
+    public override void OnNetworkSpawn()
+    {
         currentHealth = maxHealth; // Initialize current health to max health
     }
     public void HandleCollision(int healthModifier) {
