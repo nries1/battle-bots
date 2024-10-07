@@ -30,7 +30,7 @@ public class PowerUpController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collided From Powerup");
-        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        PlayerPowerupHandler player = other.gameObject.GetComponent<PlayerPowerupHandler>();
         if (player == null) return;
         player.HandlePowerUpCollision(powerUpName);
     }

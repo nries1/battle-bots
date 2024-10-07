@@ -97,6 +97,9 @@ GameObject:
   - component: {fileID: 2104646543892538615}
   - component: {fileID: 7024324164931972105}
   - component: {fileID: 3381748794619744744}
+  - component: {fileID: 4665965781098157055}
+  - component: {fileID: 1023294663473789801}
+  - component: {fileID: 8876293946455336743}
   m_Layer: 0
   m_Name: Cybertruck
   m_TagString: Untagged
@@ -139,12 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf4108f1eab6d24788e9d0b0a51caa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 0453ab3b230054af783d30a3647f5227, type: 2}
   sawBlades: {fileID: 1261547881283505830}
   blades: {fileID: 1483615708069138944}
   cattleCatcher: {fileID: 8671651579899215194}
-  moveSpeed: 10
-  turningRate: 270
 --- !u!54 &2104646543892538615
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -207,7 +207,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBarComponent: {fileID: 6719744340842880899}
-  currentHealth: 100
+--- !u!114 &4665965781098157055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193406376601282206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d8e0972778945b981f8e025705c4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 0453ab3b230054af783d30a3647f5227, type: 2}
+  moveSpeed: 10
+  turningRate: 270
+--- !u!114 &1023294663473789801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193406376601282206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0d725dbed3a4d78ab9355af8bc5477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8876293946455336743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193406376601282206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf4108f1eab6d24788e9d0b0a51caa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sawBlades: {fileID: 1261547881283505830}
+  blades: {fileID: 1483615708069138944}
+  cattleCatcher: {fileID: 8671651579899215194}
 --- !u!1 &1261547881283505830
 GameObject:
   m_ObjectHideFlags: 0
