@@ -15,6 +15,5 @@ public class SawSpinning : MonoBehaviour
     void Update()
     {
         transform.Rotate(0,0, rotationSpeed);
-        
     }
 }
