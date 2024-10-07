@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 3970376044480994235}
   - component: {fileID: 2104646543892538615}
   - component: {fileID: 7024324164931972105}
+  - component: {fileID: 3381748794619744744}
   m_Layer: 0
   m_Name: Cybertruck
   m_TagString: Untagged
@@ -139,14 +140,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 0453ab3b230054af783d30a3647f5227, type: 2}
-  healthBarComponent: {fileID: 6719744340842880899}
   sawBlades: {fileID: 1261547881283505830}
   blades: {fileID: 1483615708069138944}
   cattleCatcher: {fileID: 8671651579899215194}
   moveSpeed: 10
   turningRate: 270
-  maxHealth: 100
-  currentHealth: 0
 --- !u!54 &2104646543892538615
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -195,6 +193,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.142393, z: 3.4426222}
   m_Center: {x: 0, y: 0.5552134, z: -1.7624936}
+--- !u!114 &3381748794619744744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193406376601282206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ab265f741b5492087babad8c3bec43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBarComponent: {fileID: 6719744340842880899}
+  currentHealth: 100
 --- !u!1 &1261547881283505830
 GameObject:
   m_ObjectHideFlags: 0

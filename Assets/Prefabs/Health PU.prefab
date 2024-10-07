@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: -4238912441641966356}
   - component: {fileID: 2228015569367445473}
   - component: {fileID: 2809317353228369513}
+  - component: {fileID: 6822115437673724289}
   m_Layer: 0
   m_Name: Health PU
-  m_TagString: PowerUp
+  m_TagString: HealthModifier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +149,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.11798986, y: 1.2720517, z: 0.076016285}
   m_Center: {x: 0.0050782724, y: -0.24103002, z: 0.010483764}
+--- !u!114 &6822115437673724289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521852029913003129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: 40

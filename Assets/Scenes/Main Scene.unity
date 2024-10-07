@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &37221675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1100843855268030150, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &37221682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &47466236 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3299742991275895657, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &47466243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  modifier: -20
 --- !u!65 &51228032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: 0
 --- !u!65 &88023263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &141502289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4562642360234897162, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -441,7 +441,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
+--- !u!1 &232568965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1483615708069138944, guid: 7404d8563deae4ac0915fb6cc9efb229,
+    type: 3}
+  m_PrefabInstance: {fileID: 1198453910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &232568968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232568965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: -20
 --- !u!1 &267539626 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8008402341457290671, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -460,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &267539633
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -521,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  modifier: -20
 --- !u!65 &363901133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -738,7 +757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +915,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
+--- !u!1 &475736549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8671651579899215194, guid: 7404d8563deae4ac0915fb6cc9efb229,
+    type: 3}
+  m_PrefabInstance: {fileID: 1198453910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &475736552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475736549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: -20
 --- !u!1 &478727571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 580285754244183881, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -936,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &494437222 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2552041704824628961, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -976,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &548857775 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4455488576287804226, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -1016,7 +1054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &585101732 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4473379678382246219, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -1056,7 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &623538702 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6415019601424382113, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -1096,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &631093825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  modifier: -20
 --- !u!65 &658715497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1223,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &681775810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5362711898651315886, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -1242,7 +1280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &681775817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1303,7 +1341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &844198253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1432,7 +1470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &928612168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  modifier: -20
 --- !u!65 &992378647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1610,7 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1068070098 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1898011309577652522, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -1650,7 +1688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1078092376 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 347586434033829422, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -1690,7 +1728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1095666122 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3626383487532550328, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -1709,7 +1747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &1095666129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1743,6 +1781,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cybertruck
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261547881283505830, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483615708069138944, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 2000728989193288740, guid: 7404d8563deae4ac0915fb6cc9efb229,
         type: 3}
@@ -1794,10 +1842,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8671651579899215194, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1261547881283505830, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1977957708}
+    - targetCorrespondingSourceObject: {fileID: 1483615708069138944, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 232568968}
+    - targetCorrespondingSourceObject: {fileID: 8671651579899215194, guid: 7404d8563deae4ac0915fb6cc9efb229,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 475736552}
     - targetCorrespondingSourceObject: {fileID: 2289039401998638330, guid: 7404d8563deae4ac0915fb6cc9efb229,
         type: 3}
       insertIndex: -1
@@ -1842,7 +1907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1250586101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7457556190121882379, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -1861,7 +1926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  modifier: -20
 --- !u!65 &1250586119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1990,7 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1304613515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8005597894343456102, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2009,7 +2074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  modifier: -20
 --- !u!65 &1304613527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2070,7 +2135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1364584073 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3609942442884342275, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2110,7 +2175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1413981874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 718432972641054298, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2150,7 +2215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1451291364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1234137927550315134, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2169,7 +2234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  modifier: -20
 --- !u!65 &1451291380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2209,7 +2274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  modifier: -20
 --- !u!65 &1542355168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2270,7 +2335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!224 &1549282895 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4656359188477179174, guid: fd011127842b648d189be7a8e68200a4,
@@ -2366,7 +2431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1628291249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6518604786193258370, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2385,7 +2450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &1628291256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2446,7 +2511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1682307271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5376660173386973352, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2486,7 +2551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1709655679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3682776493994916074, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2505,7 +2570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: 0
 --- !u!65 &1709655682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2566,7 +2631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1788479466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1011537172953269165, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2606,7 +2671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1798542547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3459294354898068549, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2646,7 +2711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1851930028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8912157982341639355, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2686,7 +2751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1854744407 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5705147911522250249, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2726,7 +2791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1895949814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4827665420910917517, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2766,7 +2831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1947067301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8834684344960939209, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2806,7 +2871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &1956365489 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5267026167074223397, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2846,7 +2911,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
+--- !u!1 &1977957705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1261547881283505830, guid: 7404d8563deae4ac0915fb6cc9efb229,
+    type: 3}
+  m_PrefabInstance: {fileID: 1198453910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1977957708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977957705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: -20
 --- !u!1 &2001829143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6755728781880930082, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2886,7 +2970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &2024606404 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2253792109619052529, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -2905,7 +2989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &2024606411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3082,7 +3166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &2065756003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3143,7 +3227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 100
+  modifier: -100
 --- !u!1 &2129796209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1494942357539383177, guid: 20ef0ccdbb1254f909e142159c665e83,
@@ -3162,7 +3246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ec3686f91e40d3aa30f3ab1790b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 40
+  modifier: -20
 --- !u!65 &2129796216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3313,72 +3397,112 @@ PrefabInstance:
     - target: {fileID: 52323455158031826, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 246099600809417247, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 347586434033829422, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 580285754244183881, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 653448901694930974, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 718432972641054298, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 869997088447901990, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 1011537172953269165, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100843855268030150, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234137927550315134, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462215205768816650, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494942357539383177, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530308566572613696, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896923725277031243, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 1898011309577652522, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 2161421446546550195, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 2238385352295555077, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 2253792109619052529, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 2403637683527834746, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
       value: DamageBox
       objectReference: {fileID: 0}
+    - target: {fileID: 2451911810541771543, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
     - target: {fileID: 2552041704824628961, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 2613471828339104147, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 2746547486741248715, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
@@ -3435,125 +3559,180 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3299742991275895657, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
     - target: {fileID: 3459294354898068549, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 3609942442884342275, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626383487532550328, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 3718817745201193185, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871027601878287520, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4217082256847325477, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 4217464001249873124, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 4455488576287804226, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 4473379678382246219, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 4562642360234897162, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 4827665420910917517, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 5267026167074223397, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5362711898651315886, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 5376660173386973352, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 5705147911522250249, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730270945578817081, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 6362077996848332236, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 6415019601424382113, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518604786193258370, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 6526251048535628169, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 6755728781880930082, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773840792397361674, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 6978404205008503969, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255101133572331685, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457556190121882379, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005597894343456102, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008402341457290671, guid: 20ef0ccdbb1254f909e142159c665e83,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 8208664978273478664, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 8210247377479552315, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 8464228916544533917, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 8834684344960939209, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 8848738424968060133, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 8912157982341639355, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     - target: {fileID: 9050826571065492220, guid: 20ef0ccdbb1254f909e142159c665e83,
         type: 3}
       propertyPath: m_TagString
-      value: DamageBox
+      value: HealthModifier
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
