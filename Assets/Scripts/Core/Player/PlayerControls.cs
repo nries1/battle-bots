@@ -24,13 +24,11 @@ public class PlayerControls : NetworkBehaviour
     public void HandleMove(Vector2 input) {
         Debug.Log("Registered Movement!");
         previousMovementInput = input;
-
     }
 
     private void FixedUpdate()
     {
         transform.Translate(Vector3.forward * previousMovementInput.y * moveSpeed * Time.deltaTime);
         transform.Rotate(Vector3.up * previousMovementInput.x * turningRate * Time.deltaTime);
-        
     }
 }
