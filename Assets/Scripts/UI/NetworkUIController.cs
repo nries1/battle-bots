@@ -8,23 +8,26 @@ public class NetworkUIController : NetworkBehaviour
     [SerializeField] Button serverButton;
     [SerializeField] Button hostButton;
     [SerializeField] Button clientButton;
-    [SerializeField] TextMeshPro networkHud;
+    [SerializeField] TextMeshProUGUI networkHud;
     void Start()
     {
         serverButton.onClick.AddListener(() => {
             NetworkManager.Singleton.StartServer();
-            HideButtons();
             Debug.Log("Started game as server");
+            networkHud.SetText("Running as Server");
+            HideButtons();
         });
         hostButton.onClick.AddListener(() => {
             NetworkManager.Singleton.StartHost();
-            HideButtons();
             Debug.Log("Started game as host");
+            networkHud.SetText("Running as Host");
+            HideButtons();
         });
         clientButton.onClick.AddListener(() => {
             NetworkManager.Singleton.StartClient();
-            HideButtons();
             Debug.Log("Started game as client");
+            networkHud.SetText("Running as Client");
+            HideButtons();
         });
     }
 
