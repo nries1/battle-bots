@@ -55,5 +55,8 @@
     "[csharp]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-dotnettools.csharp"
-    }
+    },
+    "cSpell.words": [
+        "Dont"
+    ]
 }
