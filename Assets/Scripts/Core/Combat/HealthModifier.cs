@@ -6,8 +6,8 @@ public class HealthModifier : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collided From Powerup");
-        PlayerHealth playerHealthComponent = other.gameObject.GetComponent<PlayerHealth>();
-        if (playerHealthComponent == null) return;
-        playerHealthComponent.HandleCollision(modifier);
+        Health healthModComponent = other.gameObject.GetComponent<Health>();
+        if (healthModComponent == null) return;
+        healthModComponent.ModifyHealth(modifier);
     }
 }

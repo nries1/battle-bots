@@ -11,6 +11,7 @@ public class NetworkUIController : NetworkBehaviour
     [SerializeField] TextMeshProUGUI networkHud;
     void Start()
     {
+        Debug.Log("NETWORK UI RENDERING");
         serverButton.onClick.AddListener(() => {
             NetworkManager.Singleton.StartServer();
             Debug.Log("Started game as server");
