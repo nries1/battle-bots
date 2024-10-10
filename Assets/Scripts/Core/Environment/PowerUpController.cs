@@ -14,16 +14,22 @@ public class PowerUpController : MonoBehaviour
     void LateUpdate()
     {
         // rotate around the y axis
-        transform.RotateAround(transform.position, Vector3.up, 40 * Time.deltaTime);  
+        transform.RotateAround(transform.position, Vector3.up, 40 * Time.deltaTime);
         // bob up and down
-        if (ascending) {
+        if (ascending)
+        {
             transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime);
-        } else {
+        }
+        else
+        {
             transform.position = Vector3.MoveTowards(transform.position, startPos, Time.deltaTime);
         }
-        if (transform.position.y >= target.y) {
+        if (transform.position.y >= target.y)
+        {
             ascending = false;
-        } else if (transform.position.y <= startPos.y) {
+        }
+        else if (transform.position.y <= startPos.y)
+        {
             ascending = true;
         }
     }

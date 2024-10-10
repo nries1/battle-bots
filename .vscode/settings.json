@@ -54,6 +54,6 @@
     "dotnet.defaultSolution": "Battle Bots.sln",
     "[csharp]": {
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
     }
 }
