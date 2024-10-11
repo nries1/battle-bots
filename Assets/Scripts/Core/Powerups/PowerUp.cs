@@ -19,12 +19,12 @@ public class PowerUp : NetworkBehaviour
     private void OnTriggerEnter(Collider other)
     {
         OnCollected?.Invoke(this);
+        DeliverPowerUpToPlayer(other);
+    }
+    private void DeliverPowerUpToPlayer(Collider other)
+    {
         PlayerPowerupHandler player = other.gameObject.GetComponent<PlayerPowerupHandler>();
         if (player == null) return;
         player.HandlePowerUpCollision(powerUpName);
-    }
-    public void Collect()
-    {
-
     }
 }

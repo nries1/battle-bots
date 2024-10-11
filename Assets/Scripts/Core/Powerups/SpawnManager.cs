@@ -53,7 +53,6 @@ public class SpawnManager : NetworkBehaviour
         int randomPrefabIndex = Random.Range(0, powerupPrefabs.Length);
         PowerUpPrefab prefabObj = powerupPrefabs[randomPrefabIndex];
         return prefabObj;
-
     }
 
     private void SpawnPowerup()
