@@ -69,11 +69,7 @@ public class SpawnManager : NetworkBehaviour
         if (powerUpBehavior)
         {
             powerUpBehavior.OnCollected += HandlePowerUpCollected;
-        }
-        PowerupCollision powerUpCollisionEffect = spawnedObject.GetComponent<PowerupCollision>();
-        if (powerUpCollisionEffect)
-        {
-            powerUpCollisionEffect.SetPrefabName(powerUpName);
+            powerUpBehavior.SetPrefabName(powerUpName);
         }
     }
 

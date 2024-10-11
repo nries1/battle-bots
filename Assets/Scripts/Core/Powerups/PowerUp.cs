@@ -19,7 +19,6 @@ public class PowerUp : NetworkBehaviour
     private void OnTriggerEnter(Collider other)
     {
         OnCollected?.Invoke(this);
-        Debug.Log("Collided From Powerup");
         PlayerPowerupHandler player = other.gameObject.GetComponent<PlayerPowerupHandler>();
         if (player == null) return;
         player.HandlePowerUpCollision(powerUpName);
