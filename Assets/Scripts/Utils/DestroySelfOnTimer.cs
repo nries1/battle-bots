@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class DestroySelfOnTimer : MonoBehaviour
+public class DestroySelfOnTimer : NetworkBehaviour
 {
     [SerializeField] private float lifetime;
     void Start()

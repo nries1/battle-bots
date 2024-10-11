@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class DestroySelfOnCollision : MonoBehaviour
+public class DestroySelfOnCollision : NetworkBehaviour
 {
     void OnTriggerEnter(Collider other)
     {

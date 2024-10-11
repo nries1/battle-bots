@@ -1,14 +1,16 @@
 using System.Collections;
+using Unity.Netcode;
 using UnityEngine;
 
-public class HideSelfOnTimer : MonoBehaviour
+public class HideSelfOnTimer : NetworkBehaviour
 {
     [SerializeField] private float lifetime;
     void OnEnable()
     {
         StartCoroutine(Countdown());
     }
-    IEnumerator Countdown() {
+    IEnumerator Countdown()
+    {
         yield return new WaitForSeconds(lifetime);
         gameObject.SetActive(false);
     }

@@ -65,10 +65,21 @@ public class SpawnManager : NetworkBehaviour
         PowerUpName powerUpName = prefabObj.name;
         GameObject spawnedObject = Instantiate(prefab, randomSpawnLocation, Quaternion.identity);
         spawnedObject.GetComponent<NetworkObject>().Spawn();
+        PowerUp powerUpBehavior = spawnedObject.GetComponent<PowerUp>();
+        if (powerUpBehavior)
+        {
+            powerUpBehavior.OnCollected += HandlePowerUpCollected;
+        }
         PowerupCollision powerUpCollisionEffect = spawnedObject.GetComponent<PowerupCollision>();
         if (powerUpCollisionEffect)
         {
             powerUpCollisionEffect.SetPrefabName(powerUpName);
         }
+    }
+
+    private void HandlePowerUpCollected(PowerUp powerUp)
+    {
+        if (!IsServer) return;
+        powerUp.GetComponent<NetworkObject>().Despawn();
     }
 }
