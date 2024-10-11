@@ -1,11 +1,18 @@
 using System.Collections.Generic;
 using Unity.Netcode;
+using UnityEditor;
 using UnityEngine;
-
+[System.Serializable]
+public class PowerUpPrefab
+{
+    public PowerUpName name;
+    public GameObject prefab;
+}
 public class SpawnManager : NetworkBehaviour
 {
+
     private List<Vector3> spawnPositions;
-    [SerializeField] private GameObject[] powerupPrefabs;
+    [SerializeField] private PowerUpPrefab[] powerupPrefabs;
     [SerializeField] public float powerUpDuration = 10f;
     // Start is called before the first frame update
     void Start()
@@ -28,13 +35,21 @@ public class SpawnManager : NetworkBehaviour
         InvokeRepeating("SpawnPowerup", 2f, powerUpDuration);
     }
 
-    private void SpawnPowerup() {
+    private void SpawnPowerup()
+    {
         Debug.Log("Spawning powerup");
         int randomPosIndex = Random.Range(0, spawnPositions.Count);
         Vector3 randomSpawnLocation = spawnPositions[randomPosIndex];
         int randomPrefabIndex = Random.Range(0, powerupPrefabs.Length);
-        GameObject prefab = powerupPrefabs[randomPrefabIndex];
-        Instantiate(prefab, randomSpawnLocation, Quaternion.identity);
+        PowerUpPrefab prefabObj = powerupPrefabs[randomPrefabIndex];
+        GameObject prefab = prefabObj.prefab;
+        PowerUpName powerUpName = prefabObj.name;
+        GameObject spawnedObject = Instantiate(prefab, randomSpawnLocation, Quaternion.identity);
+        PowerupCollision powerUpCollisionEffect = spawnedObject.GetComponent<PowerupCollision>();
+        if (powerUpCollisionEffect)
+        {
+            powerUpCollisionEffect.SetPrefabName(powerUpName);
+        }
     }
-    
+
 }

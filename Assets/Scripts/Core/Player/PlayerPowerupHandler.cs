@@ -1,7 +1,8 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerPowerupHandler : NetworkBehaviour {
+public class PlayerPowerupHandler : NetworkBehaviour
+{
 
     [Header("References")]
     [SerializeField] private GameObject sawBlades;
@@ -9,39 +10,36 @@ public class PlayerPowerupHandler : NetworkBehaviour {
     [SerializeField] private GameObject cattleCatcher;
     [SerializeField] private GameObject teslaCannon;
     [SerializeField] private GameObject hammer;
-   
-    
-    public void HandlePowerUpCollision(string powerUpName) {
+
+
+    public void HandlePowerUpCollision(PowerUpName powerUpName)
+    {
         // if (!other.gameObject.CompareTag("PowerUp")) return;
         // string powerUpName = other.GetComponent<PowerUpController>().name;
         Debug.Log("Player receiving " + powerUpName);
-        switch(powerUpName) {
-            case "Saws":
+        switch (powerUpName)
+        {
+            case PowerUpName.Saws:
                 Debug.Log("Received " + powerUpName);
-                HandleSawPowerUp();
+                sawBlades.SetActive(true);
                 break;
-            case "Blades":
+            case PowerUpName.Blades:
                 Debug.Log("Received " + powerUpName);
                 blades.SetActive(true);
                 break;
-            case "CattleCatcher":
+            case PowerUpName.CattleCatcher:
                 Debug.Log("Received " + powerUpName);
                 cattleCatcher.SetActive(true);
                 break;
-            case "TeslaCannon":
+            case PowerUpName.TeslaCannon:
                 Debug.Log("Received " + powerUpName);
                 teslaCannon.SetActive(true);
                 break;
-            case "Hammer":
+            case PowerUpName.Hammer:
                 Debug.Log("Received " + powerUpName);
                 hammer.SetActive(true);
                 break;
         }
     }
 
-    private void HandleSawPowerUp() {
-        Debug.Log("Setting SAWS ACTIVE");
-        sawBlades.SetActive(true);
-    }
-   
 }

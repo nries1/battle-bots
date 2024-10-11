@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class PowerUpController : MonoBehaviour
+public class SpinAndRotate : MonoBehaviour
 {
-    [SerializeField] private string powerUpName;
     private bool ascending = true;
     private Vector3 target;
     private Vector3 startPos;
@@ -33,11 +32,5 @@ public class PowerUpController : MonoBehaviour
             ascending = true;
         }
     }
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Collided From Powerup");
-        PlayerPowerupHandler player = other.gameObject.GetComponent<PlayerPowerupHandler>();
-        if (player == null) return;
-        player.HandlePowerUpCollision(powerUpName);
-    }
+
 }

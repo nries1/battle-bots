@@ -2321,7 +2321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1571601170}
   - component: {fileID: 1571601172}
-  - component: {fileID: 1571601171}
+  - component: {fileID: 1571601173}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -2344,26 +2344,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1571601171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571601169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52ba6f40124c4074b95e4daf44ef523, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerupPrefabs:
-  - {fileID: 5156817230917286209, guid: 0e7057b3207b04eafa6c5635841fe9fc, type: 3}
-  - {fileID: 2009586733192260407, guid: 82ca8be8cd9944b8e84eae347b7c5ee8, type: 3}
-  - {fileID: 6684434493724024561, guid: b6a296b1da64f491b86ae5e5505451a5, type: 3}
-  - {fileID: 4234920914490685765, guid: 0847c1f79862648f693ef44fcb5be70a, type: 3}
-  - {fileID: 6984694614101174631, guid: bc6607377c8404b0ba8290c4501a52ad, type: 3}
-  - {fileID: 8688179578539141264, guid: c5d46cc50cf5d42209fbb59f5afe6dac, type: 3}
-  powerUpDuration: 20
 --- !u!114 &1571601172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,6 +2365,38 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!114 &1571601173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571601169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52ba6f40124c4074b95e4daf44ef523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupPrefabs:
+  - name: 0
+    prefab: {fileID: 8067855511474711150, guid: c0a6c4c9892e942f793a9c4327e4825a,
+      type: 3}
+  - name: 1
+    prefab: {fileID: 7698142321557290813, guid: 1c357a33b481742cb9f4049cdb6bf32e,
+      type: 3}
+  - name: 2
+    prefab: {fileID: 8346881889357413098, guid: 577293084123b463789a7b02902d9840,
+      type: 3}
+  - name: 5
+    prefab: {fileID: 6959833214338675621, guid: a2251eee6bdb24ec88383e609e237e01,
+      type: 3}
+  - name: 4
+    prefab: {fileID: 6148876064073487519, guid: 194c63f04c6c24c8284247facc66a5d7,
+      type: 3}
+  - name: 3
+    prefab: {fileID: 4234920914490685765, guid: 0847c1f79862648f693ef44fcb5be70a,
+      type: 3}
+  powerUpDuration: 10
 --- !u!1 &1575973088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2238385352295555077, guid: 20ef0ccdbb1254f909e142159c665e83,
