@@ -1,10 +1,7 @@
-using Unity.Netcode;
-using Unity.Netcode.Components;
 using UnityEngine;
 
 public class HealthModifier : MonoBehaviour
 {
-
     private ulong ownerClientId;
     [SerializeField] public int modifier;
 
