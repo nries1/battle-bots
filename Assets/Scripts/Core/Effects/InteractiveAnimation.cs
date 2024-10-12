@@ -24,9 +24,10 @@ public class HammerController : NetworkBehaviour
             inputReader.PrimaryFireEvent += HandleFire;
         }
     }
-    private void HandleFire(bool shouldSwing)
+    public void HandleFire(bool shouldSwing)
     {
-        if (!shouldSwing || isSwinging || gameObject.activeSelf) return;
+        Debug.Log("Registered a fire");
+        if (!shouldSwing || isSwinging || !gameObject.activeSelf) return;
         Debug.Log("Firing!");
         StartCoroutine(SwingHammer());
     }

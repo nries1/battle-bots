@@ -9,19 +9,21 @@ public class PlayerControls : NetworkBehaviour
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float turningRate = 270f; // 270 deg / sec
-    
+
     private Vector2 previousMovementInput;
 
 
     public override void OnNetworkSpawn()
     {
         inputReader.MoveEvent += HandleMove;
-        inputReader.PrimaryFireEvent += HandleFire;
+        // inputReader.PrimaryFireEvent += HandleFire;
     }
-     public void HandleFire(bool isFiring) {
-        Debug.Log("Fire Effects not implemented");
-    }
-    public void HandleMove(Vector2 input) {
+    //  public void HandleFire(bool isFiring) {
+
+    //     HammerController
+    // }
+    public void HandleMove(Vector2 input)
+    {
         Debug.Log("Registered Movement!");
         previousMovementInput = input;
     }
