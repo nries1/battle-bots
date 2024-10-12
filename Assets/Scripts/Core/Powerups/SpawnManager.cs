@@ -70,6 +70,7 @@ public class SpawnManager : NetworkBehaviour
             powerUpBehavior.OnCollected += HandlePowerUpCollected;
             powerUpBehavior.SetPrefabName(powerUpName);
         }
+        Destroy(spawnedObject, powerUpDuration);
     }
 
     private void HandlePowerUpCollected(PowerUp powerUp)
