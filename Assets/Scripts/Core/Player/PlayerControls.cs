@@ -24,7 +24,6 @@ public class PlayerControls : NetworkBehaviour
     // }
     public void HandleMove(Vector2 input)
     {
-        Debug.Log("Registered Movement!");
         previousMovementInput = input;
     }
 

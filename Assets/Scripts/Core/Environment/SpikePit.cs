@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpikePit : MonoBehaviour
-{   [SerializeField] float speed = 10.0f;
-    
+{
+    [SerializeField] float speed = 10.0f;
+
     private Vector3 startPosition;
     private MeshCollider meshCollider;
     private float targetY;
@@ -22,13 +23,11 @@ public class SpikePit : MonoBehaviour
 
         targetY = meshCollider.bounds.size.y + transform.position.y;
 
-        target = new Vector3 (transform.position.x, targetY, transform.position.z);
+        target = new Vector3(transform.position.x, targetY, transform.position.z);
 
-        Debug.Log(targetY);
+        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
-        transform.position = Vector3.MoveTowards(transform.position, target, speed *Time.deltaTime);
 
-        
 
     }
     private void Update()
@@ -44,12 +43,12 @@ public class SpikePit : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, startPosition, speed * Time.deltaTime);
             }
 
-            if (transform.position.y >= targetY) 
+            if (transform.position.y >= targetY)
             {
                 isAscending = false;
-               
+
             }
-            else if (transform.position.y <= startPosition.y) 
+            else if (transform.position.y <= startPosition.y)
             {
                 isAscending = true;
                 StartCoroutine(PauseAtBottom());
@@ -60,9 +59,9 @@ public class SpikePit : MonoBehaviour
     private IEnumerator PauseAtBottom()
     {
         isPaused = true;
-        float pauseDuration = Random.Range(1f, 10f); 
+        float pauseDuration = Random.Range(1f, 10f);
         yield return new WaitForSeconds(pauseDuration);
-        isPaused = false; 
+        isPaused = false;
     }
 }
 

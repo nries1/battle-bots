@@ -57,6 +57,7 @@
         "editor.defaultFormatter": "ms-dotnettools.csharp"
     },
     "cSpell.words": [
-        "Dont"
+        "Dont",
+        "dtls"
     ]
 }
