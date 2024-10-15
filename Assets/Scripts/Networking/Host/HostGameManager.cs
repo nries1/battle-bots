@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 using Unity.Services.Lobbies.Models;
 using System.Collections.Generic;
 using System.Collections;
+using System.Text;
 
 public class HostGameManager
 {
@@ -19,6 +20,7 @@ public class HostGameManager
     private string lobbyId;
     private const int MaxConnections = 20;
     private const string GameSceneName = "Main Scene";
+    private NetworkServer networkServer;
     public async Task StartHostAsync()
     {
         try
@@ -59,7 +61,8 @@ public class HostGameManager
                     )
                 }
             };
-            Lobby lobby = await Lobbies.Instance.CreateLobbyAsync("Lobby", MaxConnections, lobbyOptions);
+            string playerName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Anonymous");
+            Lobby lobby = await Lobbies.Instance.CreateLobbyAsync($"{playerName}'s Lobby", MaxConnections, lobbyOptions);
             lobbyId = lobby.Id;
             HostSingleton.Instance.StartCoroutine(HeartBeatLobby(15));
         }
@@ -69,6 +72,14 @@ public class HostGameManager
             return;
         }
 
+        networkServer = new NetworkServer(NetworkManager.Singleton);
+        UserData userData = new UserData()
+        {
+            userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Anonymous")
+        };
+        string payload = JsonUtility.ToJson(userData);
+        byte[] payloadBytes = Encoding.UTF8.GetBytes(payload);
+        NetworkManager.Singleton.NetworkConfig.ConnectionData = payloadBytes;
         NetworkManager.Singleton.StartHost();
         NetworkManager.Singleton.SceneManager.LoadScene(GameSceneName, LoadSceneMode.Single);
     }
