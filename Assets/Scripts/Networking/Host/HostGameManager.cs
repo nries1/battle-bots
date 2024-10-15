@@ -12,6 +12,7 @@ using Unity.Services.Lobbies.Models;
 using System.Collections.Generic;
 using System.Collections;
 using System.Text;
+using Unity.Services.Authentication;
 
 public class HostGameManager
 {
@@ -75,7 +76,9 @@ public class HostGameManager
         networkServer = new NetworkServer(NetworkManager.Singleton);
         UserData userData = new UserData()
         {
-            userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Anonymous")
+            userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Anonymous"),
+            userAuthId = AuthenticationService.Instance.PlayerId
+
         };
         string payload = JsonUtility.ToJson(userData);
         byte[] payloadBytes = Encoding.UTF8.GetBytes(payload);
