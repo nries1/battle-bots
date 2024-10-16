@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 1815464540143498743, guid: 73243e49aa6df47a2ae815e7f31c0300,
         type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 1966399579
+      value: 1012561881
       objectReference: {fileID: 0}
     - target: {fileID: 1815464540143498743, guid: 73243e49aa6df47a2ae815e7f31c0300,
         type: 3}
@@ -139,7 +139,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7698142321557290813}
-  m_Mesh: {fileID: 289820739440523884, guid: 319f6d751f60740888d2ff9e17a447c3, type: 3}
+  m_Mesh: {fileID: 289820739440523884, guid: 0363ca3927c2e4382a811ea1feb9003a, type: 3}
 --- !u!23 &8452125559279715962
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -160,8 +160,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1182921469339338275, guid: 319f6d751f60740888d2ff9e17a447c3, type: 3}
-  - {fileID: -2603747578493268616, guid: 319f6d751f60740888d2ff9e17a447c3, type: 3}
+  - {fileID: -2603747578493268616, guid: 0363ca3927c2e4382a811ea1feb9003a, type: 3}
+  - {fileID: -1802180356156749963, guid: 0363ca3927c2e4382a811ea1feb9003a, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

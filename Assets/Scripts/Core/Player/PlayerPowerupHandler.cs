@@ -19,19 +19,19 @@ public class PlayerPowerupHandler : NetworkBehaviour
         switch (powerUpName)
         {
             case PowerUpName.Saws:
-                sawBlades.SetActive(true);
+                Debug.Log("ANIMATION SHOULD GO HERE");
                 break;
             case PowerUpName.Blades:
-                blades.SetActive(true);
+                Debug.Log("ANIMATION SHOULD GO HERE");
                 break;
             case PowerUpName.CattleCatcher:
-                cattleCatcher.SetActive(true);
+                Debug.Log("ANIMATION SHOULD GO HERE");
                 break;
             case PowerUpName.TeslaCannon:
-                teslaCannon.SetActive(true);
+                Debug.Log("ANIMATION SHOULD GO HERE");
                 break;
             case PowerUpName.Hammer:
-                hammer.SetActive(true);
+                Debug.Log("ANIMATION SHOULD GO HERE");
                 break;
         }
     }
