@@ -4,7 +4,7 @@ using Unity.Netcode;
 using Unity.Services.Authentication;
 using UnityEngine;
 
-public class NetworkServer
+public class NetworkServer : IDisposable
 {
     // ClientId is an id assigned to each user at the time of connection
     // AuthId is assigned to each user across every authentication
@@ -45,6 +45,20 @@ public class NetworkServer
         {
             clientIdToAuthId.Remove(clientId);
             authIdToUserData.Remove(authId);
+        }
+    }
+
+    public void Dispose()
+    {
+        if (networkManager != null)
+        {
+            networkManager.ConnectionApprovalCallback -= ApprovalCheck;
+            networkManager.OnServerStarted -= OnNetworkReady;
+            networkManager.OnClientDisconnectCallback -= OnClientDisconnect;
+            if (networkManager.IsListening)
+            {
+                networkManager.Shutdown();
+            }
         }
     }
 }

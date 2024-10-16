@@ -9,9 +9,10 @@ using Unity.Services.Core;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
-public class ClientGameManager
+public class ClientGameManager : IDisposable
 {
     private const string menuSceneName = "menu";
     private JoinAllocation joinAllocation;
@@ -52,5 +53,13 @@ public class ClientGameManager
         byte[] payloadBytes = Encoding.UTF8.GetBytes(payload);
         NetworkManager.Singleton.NetworkConfig.ConnectionData = payloadBytes;
         NetworkManager.Singleton.StartClient();
+    }
+
+    public void Dispose()
+    {
+        if (networkClient != null)
+        {
+            networkClient.Dispose();
+        }
     }
 }
