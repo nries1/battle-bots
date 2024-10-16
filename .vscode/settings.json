@@ -57,8 +57,12 @@
         "editor.defaultFormatter": "ms-dotnettools.csharp"
     },
     "cSpell.words": [
+        "Behaviour",
+        "Cinemachine",
+        "Despawn",
         "Dont",
         "dtls",
-        "interactable"
+        "interactable",
+        "Netcode"
     ]
 }

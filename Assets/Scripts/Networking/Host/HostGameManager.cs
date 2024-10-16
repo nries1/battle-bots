@@ -78,7 +78,6 @@ public class HostGameManager : IDisposable
         {
             userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Anonymous"),
             userAuthId = AuthenticationService.Instance.PlayerId
-
         };
         string payload = JsonUtility.ToJson(userData);
         byte[] payloadBytes = Encoding.UTF8.GetBytes(payload);
@@ -99,7 +98,7 @@ public class HostGameManager : IDisposable
 
     public async void Dispose()
     {
-        HostSingleton.Instance.StopCoroutine(nameof(HeartBeatLobby));
+        HostSingleton.Instance?.StopCoroutine(nameof(HeartBeatLobby));
         if (!string.IsNullOrEmpty(lobbyId))
         {
             try

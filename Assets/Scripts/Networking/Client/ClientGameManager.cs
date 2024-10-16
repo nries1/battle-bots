@@ -51,6 +51,7 @@ public class ClientGameManager : IDisposable
         string payload = JsonUtility.ToJson(userData);
         byte[] payloadBytes = Encoding.UTF8.GetBytes(payload);
         NetworkManager.Singleton.NetworkConfig.ConnectionData = payloadBytes;
+        Debug.Log("Starting client");
         NetworkManager.Singleton.StartClient();
     }
 

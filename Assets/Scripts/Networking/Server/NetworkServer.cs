@@ -21,6 +21,7 @@ public class NetworkServer : IDisposable
     // Approval check runs whenever a client connects to the server
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
     {
+        Debug.Log("Running Approval check");
         // get a string from the byte array in the request
         string payload = System.Text.Encoding.UTF8.GetString(request.Payload);
         // convert the string into a userdata object

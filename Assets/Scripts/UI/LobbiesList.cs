@@ -39,10 +39,12 @@ public class LobbiesList : MonoBehaviour
             };
             // get the lobbies from UGS based on our filters
             QueryResponse lobbies = await Lobbies.Instance.QueryLobbiesAsync(options);
+            // Destroy the lobbies that are already in the list
             foreach (Transform child in lobbyItemParent)
             {
                 Destroy(child.gameObject);
             }
+            // Repopulate the list of lobbies
             foreach (Lobby lobby in lobbies.Results)
             {
                 LobbyItem lobbyItem = Instantiate(lobbyItemPrefab, lobbyItemParent);
@@ -64,6 +66,8 @@ public class LobbiesList : MonoBehaviour
         {
             Lobby joiningLobby = await Lobbies.Instance.JoinLobbyByIdAsync(lobby.Id);
             string joinCode = joiningLobby.Data["joinCode"].Value;
+            Debug.Log($"JOINING LOBBY {lobby.Id}");
+            Debug.Log($"JOIN CODE = {joinCode}");
             await ClientSingleton.Instance.GameManager.StartClientAsync(joinCode);
         }
         catch (Exception exception)

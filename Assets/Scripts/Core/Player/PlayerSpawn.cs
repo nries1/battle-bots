@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerSpawn : NetworkBehaviour
 {
 
-    private struct StartPosition {
+    private struct StartPosition
+    {
         public Vector3 position;
         public int yRotation;
-        public StartPosition(Vector3 posVector, int yRotation) {
+        public StartPosition(Vector3 posVector, int yRotation)
+        {
             this.position = posVector;
             this.yRotation = yRotation;
         }

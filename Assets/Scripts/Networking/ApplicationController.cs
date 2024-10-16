@@ -10,6 +10,7 @@ public class ApplicationController : MonoBehaviour
     private async void Start()
     {
         DontDestroyOnLoad(gameObject);
+        // the dedicated server doesn't have a graphics device because it doesn't render anything because it doesn't have anyone playing on it
         await LaunchInMode(SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Null);
     }
 
@@ -17,7 +18,7 @@ public class ApplicationController : MonoBehaviour
     {
         if (isDedicatedServer)
         {
-
+            // TODO: implement dedicated server logic
         }
         else
         {
