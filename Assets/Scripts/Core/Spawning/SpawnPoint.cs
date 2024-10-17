@@ -15,6 +15,17 @@ public class SpawnPoint : MonoBehaviour
         }
     }
     private static List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+    private static List<SpawnData> defaultStartPositions = new List<SpawnData>
+        {
+            // right
+            new SpawnData(new Vector3(-24, 2, -60), Quaternion.Euler(0,-90,0)),
+            // left
+            new SpawnData(new Vector3(-55, 2, -60), Quaternion.Euler(0,90,0)),
+            // top
+            new SpawnData(new Vector3(-40, 2, -46), Quaternion.Euler(0,180,0)),
+            //bottom
+            new SpawnData(new Vector3(-40, 2, -73), Quaternion.Euler(0,0,0))
+        };
     private void OnEnable()
     {
         spawnPoints.Add(this);
@@ -31,6 +42,6 @@ public class SpawnPoint : MonoBehaviour
             SpawnPoint spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
             return new SpawnData(spawnPoint.transform.position, spawnPoint.transform.rotation);
         }
-        return new SpawnData(new Vector3(-60, 2, -40), Quaternion.Euler(0, 135, 0));
+        return defaultStartPositions[Random.Range(0, defaultStartPositions.Count)];
     }
 }
