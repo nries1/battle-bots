@@ -14,6 +14,7 @@ public class NetworkServer : IDisposable
     public NetworkServer(NetworkManager networkManager)
     {
         this.networkManager = networkManager;
+        networkManager.NetworkConfig.ConnectionApproval = true;
         networkManager.ConnectionApprovalCallback += ApprovalCheck;
         networkManager.OnServerStarted += OnNetworkReady;
     }
@@ -33,11 +34,11 @@ public class NetworkServer : IDisposable
         Debug.Log($"{userData.userName} connected");
         // allow the user to finish their connection
         response.Approved = true;
-        Transform spawnPoint = SpawnPoint.GetRandomSpawnPos();
-        Debug.Log("position = " + spawnPoint.transform.position);
-        Debug.Log("rotation = " + spawnPoint.transform.rotation);
-        response.Position = spawnPoint.transform.position;
-        response.Rotation = spawnPoint.transform.rotation;
+        SpawnPoint.SpawnData spawnPoint = SpawnPoint.GetRandomSpawnPos();
+        Debug.Log("position = " + spawnPoint.Position);
+        Debug.Log("rotation = " + spawnPoint.Rotation);
+        response.Position = spawnPoint.Position;
+        response.Rotation = spawnPoint.Rotation;
         response.CreatePlayerObject = true;
     }
     private void OnNetworkReady()
