@@ -28,10 +28,12 @@ public class SpawnPoint : MonoBehaviour
         };
     private void OnEnable()
     {
+        Debug.Log("Added a spawn point to the starting list");
         spawnPoints.Add(this);
     }
     private void OnDisable()
     {
+        Debug.Log("Removed a spawn point from the starting list");
         spawnPoints.Remove(this);
     }
     public static SpawnData GetRandomSpawnPos()

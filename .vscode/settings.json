@@ -60,6 +60,7 @@
         "Behaviour",
         "Cinemachine",
         "Despawn",
+        "Despawned",
         "Dont",
         "dtls",
         "interactable",
