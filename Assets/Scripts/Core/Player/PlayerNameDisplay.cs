@@ -3,7 +3,7 @@ using TMPro;
 using Unity.Collections;
 using UnityEngine;
 
-public class PlayerHud : MonoBehaviour
+public class PlayerNameDisplay : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private TMP_Text playerNameText;
