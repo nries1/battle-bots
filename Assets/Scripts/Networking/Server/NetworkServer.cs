@@ -33,6 +33,9 @@ public class NetworkServer : IDisposable
         Debug.Log($"{userData.userName} connected");
         // allow the user to finish their connection
         response.Approved = true;
+        SpawnPoint.SpawnPosition spawnPoint = SpawnPoint.GetRandomPlayerSpawnPos();
+        response.Position = spawnPoint.position;
+        response.Rotation = Quaternion.Euler(0, spawnPoint.yRotation, 0);
         response.CreatePlayerObject = true;
     }
     private void OnNetworkReady()
@@ -61,5 +64,17 @@ public class NetworkServer : IDisposable
                 networkManager.Shutdown();
             }
         }
+    }
+
+    public UserData GetUserDataByClientId(ulong clientId)
+    {
+        if (clientIdToAuthId.TryGetValue(clientId, out string authId))
+        {
+            if (authIdToUserData.TryGetValue(authId, out UserData data))
+            {
+                return data;
+            }
+        }
+        return null;
     }
 }

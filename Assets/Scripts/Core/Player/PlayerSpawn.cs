@@ -1,10 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
 public class PlayerSpawn : NetworkBehaviour
 {
-
     private struct StartPosition
     {
         public Vector3 position;
@@ -29,11 +30,19 @@ public class PlayerSpawn : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        Debug.Log("Player Spawned");
         if (!IsOwner) return;
+        Debug.Log("Changing Spawn Position");
+        StartCoroutine(SpawnDelay(2));
         int randomSpawnIndex = Random.Range(0, startPositions.Count);
         StartPosition startPos = startPositions[randomSpawnIndex];
         transform.position = startPos.position;
         transform.Rotate(0, startPos.yRotation, 0);
+        Debug.Log("Changed Spawn Position");
+    }
+    private IEnumerator SpawnDelay(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
     public override void OnNetworkDespawn()
     {

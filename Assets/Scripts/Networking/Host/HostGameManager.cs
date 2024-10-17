@@ -21,7 +21,7 @@ public class HostGameManager : IDisposable
     private string lobbyId;
     private const int MaxConnections = 20;
     private const string GameSceneName = "Main Scene";
-    private NetworkServer networkServer;
+    public NetworkServer NetworkServer { get; private set; }
     public async Task StartHostAsync()
     {
         try
@@ -73,7 +73,7 @@ public class HostGameManager : IDisposable
             return;
         }
 
-        networkServer = new NetworkServer(NetworkManager.Singleton);
+        NetworkServer = new NetworkServer(NetworkManager.Singleton);
         UserData userData = new UserData()
         {
             userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Anonymous"),
@@ -110,6 +110,6 @@ public class HostGameManager : IDisposable
                 Debug.Log(exception);
             }
         }
-        networkServer?.Dispose();
+        NetworkServer?.Dispose();
     }
 }
