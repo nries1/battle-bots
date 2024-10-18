@@ -24,21 +24,6 @@ public class PowerUpSpawnManager : NetworkBehaviour
 
     private void SpawnPowerups()
     {
-        // int bottomRampZPos = -28;
-        // int YposAboveRamp = 3;
-        // int topRampZPos = -92;
-        // int leftRampXPos = -25;
-        // int midRampXPos = -40;
-        // int rightRampXPos = -55;
-        // spawnPositions = new List<Vector3>
-        // {
-        //     new Vector3(leftRampXPos, YposAboveRamp, bottomRampZPos),
-        //     new Vector3(midRampXPos, YposAboveRamp, bottomRampZPos),
-        //     new Vector3(rightRampXPos, YposAboveRamp, bottomRampZPos),
-        //     new Vector3(leftRampXPos, YposAboveRamp, topRampZPos),
-        //     new Vector3(midRampXPos, YposAboveRamp, topRampZPos),
-        //     new Vector3(rightRampXPos, YposAboveRamp, topRampZPos)
-        // };
         InvokeRepeating("SpawnPowerup", 2f, powerUpDuration);
     }
 
