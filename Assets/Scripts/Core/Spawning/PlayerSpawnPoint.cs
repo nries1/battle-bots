@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpawnPoint : MonoBehaviour
+public class PlayerSpawnPoint : MonoBehaviour
 {
     public class SpawnData
     {
@@ -14,8 +14,8 @@ public class SpawnPoint : MonoBehaviour
             Rotation = rotation;
         }
     }
-    private static List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
-    private static List<SpawnData> defaultStartPositions = new List<SpawnData>
+    private static List<PlayerSpawnPoint> spawnPoints = new List<PlayerSpawnPoint>();
+    private static List<SpawnData> defaultPlayerStartPositions = new List<SpawnData>
         {
             // right
             new SpawnData(new Vector3(-24, 2, -60), Quaternion.Euler(0,-90,0)),
@@ -41,9 +41,9 @@ public class SpawnPoint : MonoBehaviour
         Debug.Log($"There are {spawnPoints.Count} spawn points available");
         if (spawnPoints?.Count > 0)
         {
-            SpawnPoint spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
+            PlayerSpawnPoint spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
             return new SpawnData(spawnPoint.transform.position, spawnPoint.transform.rotation);
         }
-        return defaultStartPositions[Random.Range(0, defaultStartPositions.Count)];
+        return defaultPlayerStartPositions[Random.Range(0, defaultPlayerStartPositions.Count)];
     }
 }

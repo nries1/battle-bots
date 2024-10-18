@@ -34,7 +34,7 @@ public class NetworkServer : IDisposable
         Debug.Log($"{userData.userName} connected");
         // allow the user to finish their connection
         response.Approved = true;
-        SpawnPoint.SpawnData spawnPoint = SpawnPoint.GetRandomSpawnPos();
+        PlayerSpawnPoint.SpawnData spawnPoint = PlayerSpawnPoint.GetRandomSpawnPos();
         Debug.Log("position = " + spawnPoint.Position);
         Debug.Log("rotation = " + spawnPoint.Rotation);
         response.Position = spawnPoint.Position;

@@ -5,11 +5,21 @@ using UnityEngine;
 public class PowerUp : NetworkBehaviour
 {
     public event Action<PowerUp> OnCollected;
+    public event Action<PowerUp> OnDestroyed;
     private PowerUpName powerUpName;
-
+    public Transform SpawnPoint { get; private set; }
+    public void SetSpawnPoint(Transform spawnPoint)
+    {
+        SpawnPoint = spawnPoint;
+    }
     public void SetPrefabName(PowerUpName name)
     {
         powerUpName = name;
+    }
+
+    private void OnDisable()
+    {
+        OnDestroyed?.Invoke(this);
     }
 
     public override void OnNetworkSpawn()
