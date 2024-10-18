@@ -1,32 +1,41 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NetworkClient : IDisposable
 {
     private NetworkManager networkManager;
-    private const string mainMenuSceneName = "Menu";
+
+    private const string MenuSceneName = "Menu";
+
     public NetworkClient(NetworkManager networkManager)
     {
         this.networkManager = networkManager;
+
         networkManager.OnClientDisconnectCallback += OnClientDisconnect;
     }
 
     private void OnClientDisconnect(ulong clientId)
     {
-        // host has id 0 and we don't want to 
-        if (clientId != 0 && clientId != networkManager.LocalClientId) return;
-        // If you DC, go back to the main menu
-        if (SceneManager.GetActiveScene().name != mainMenuSceneName)
+        if (clientId != 0 && clientId != networkManager.LocalClientId) { return; }
+
+        Disconnect();
+    }
+
+    public void Disconnect()
+    {
+        if (SceneManager.GetActiveScene().name != MenuSceneName)
         {
-            SceneManager.LoadScene(mainMenuSceneName);
+            SceneManager.LoadScene(MenuSceneName);
         }
-        // If we're still connected as a client, then shut down because we must have timed out
+
         if (networkManager.IsConnectedClient)
         {
             networkManager.Shutdown();
         }
-
     }
 
     public void Dispose()

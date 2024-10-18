@@ -9,31 +9,31 @@ public class DeathHandler : NetworkBehaviour
     {
         if (!IsServer) return;
         // handle case where there are already players in the scene when this spawns
-        Player[] players = FindObjectsOfType<Player>();
-        foreach (Player player in players)
+        CyberTruckPlayer[] players = FindObjectsOfType<CyberTruckPlayer>();
+        foreach (CyberTruckPlayer player in players)
         {
             HandlePlayerSpawned(player);
         }
-        Player.OnPlayerSpawned += HandlePlayerSpawned;
-        Player.OnPlayerDespawned += HandlePlayerDespawned;
+        CyberTruckPlayer.OnPlayerSpawned += HandlePlayerSpawned;
+        CyberTruckPlayer.OnPlayerDespawned += HandlePlayerDespawned;
     }
     public override void OnNetworkDespawn()
     {
         if (!IsServer) return;
-        Player.OnPlayerSpawned -= HandlePlayerSpawned;
-        Player.OnPlayerDespawned -= HandlePlayerDespawned;
+        CyberTruckPlayer.OnPlayerSpawned -= HandlePlayerSpawned;
+        CyberTruckPlayer.OnPlayerDespawned -= HandlePlayerDespawned;
     }
 
-    private void HandlePlayerSpawned(Player player)
+    private void HandlePlayerSpawned(CyberTruckPlayer player)
     {
         player.Health.OnDie += (Health health) => HandlePlayerDie(player);
     }
-    private void HandlePlayerDespawned(Player player)
+    private void HandlePlayerDespawned(CyberTruckPlayer player)
     {
         player.Health.OnDie -= (Health health) => HandlePlayerDie(player);
     }
 
-    private void HandlePlayerDie(Player player)
+    private void HandlePlayerDie(CyberTruckPlayer player)
     {
         Destroy(player.gameObject);
     }

@@ -3,7 +3,7 @@ using Cinemachine;
 using UnityEngine;
 using Unity.Collections;
 using System;
-public class Player : NetworkBehaviour
+public class CyberTruckPlayer : NetworkBehaviour
 {
     // reference to the cinemachine camera
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
@@ -11,9 +11,9 @@ public class Player : NetworkBehaviour
     [SerializeField] private int cameraPriority = 15;
     public NetworkVariable<FixedString32Bytes> PlayerName = new NetworkVariable<FixedString32Bytes>();
     // event that fires when a player spawns on network
-    public static event Action<Player> OnPlayerSpawned;
+    public static event Action<CyberTruckPlayer> OnPlayerSpawned;
     // event that fires when a player despawns on the network
-    public static event Action<Player> OnPlayerDespawned;
+    public static event Action<CyberTruckPlayer> OnPlayerDespawned;
     // Reference to the health script component on the player
     [field: SerializeField] public Health Health { get; private set; }
     public override void OnNetworkSpawn()

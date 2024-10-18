@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Unity.Netcode;
@@ -13,53 +15,70 @@ using UnityEngine.SceneManagement;
 
 public class ClientGameManager : IDisposable
 {
-    private const string menuSceneName = "menu";
-    private JoinAllocation joinAllocation;
+    private JoinAllocation allocation;
+
     private NetworkClient networkClient;
+
+    private const string MenuSceneName = "Menu";
+
     public async Task<bool> InitAsync()
     {
         await UnityServices.InitializeAsync();
+
         networkClient = new NetworkClient(NetworkManager.Singleton);
-        AuthState authState = await AuthenticationHandler.DoAuth(5);
-        return authState == AuthState.Authenticated;
+
+        AuthState authState = await AuthenticationWrapper.DoAuth();
+
+        if (authState == AuthState.Authenticated)
+        {
+            return true;
+        }
+
+        return false;
     }
+
     public void GoToMenu()
     {
-        SceneManager.LoadScene(menuSceneName);
+        SceneManager.LoadScene(MenuSceneName);
     }
 
     public async Task StartClientAsync(string joinCode)
     {
         try
         {
-            joinAllocation = await Relay.Instance.JoinAllocationAsync(joinCode);
+            allocation = await Relay.Instance.JoinAllocationAsync(joinCode);
         }
-        catch (Exception exception)
+        catch (Exception e)
         {
-            Debug.Log(exception);
+            Debug.Log(e);
             return;
         }
 
         UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
-        RelayServerData relayServerData = new RelayServerData(joinAllocation, "dtls");
+
+        RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
         transport.SetRelayServerData(relayServerData);
-        UserData userData = new UserData()
+
+        UserData userData = new UserData
         {
-            userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Anonymous"),
+            userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Missing Name"),
             userAuthId = AuthenticationService.Instance.PlayerId
         };
         string payload = JsonUtility.ToJson(userData);
         byte[] payloadBytes = Encoding.UTF8.GetBytes(payload);
+
         NetworkManager.Singleton.NetworkConfig.ConnectionData = payloadBytes;
-        Debug.Log("Starting client");
+
         NetworkManager.Singleton.StartClient();
+    }
+
+    public void Disconnect()
+    {
+        networkClient.Disconnect();
     }
 
     public void Dispose()
     {
-        if (networkClient != null)
-        {
-            networkClient.Dispose();
-        }
+        networkClient?.Dispose();
     }
 }
