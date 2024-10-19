@@ -18,7 +18,7 @@ public class UserData
 {
     public string userName;
     public string userAuthId;
-    public GameInfo userGamePreferences;
+    public GameInfo userGamePreferences = new GameInfo();
 
 }
 
@@ -30,6 +30,12 @@ public class GameInfo
     public GameQueue gameQueue;
     public string ToMultiplayQueue()
     {
-        return "";
+        return gameQueue switch
+        {
+            GameQueue.Solo => "solo-queue",
+            // TODO: Add team matchmaking
+            GameQueue.Team => "team-queue",
+            _ => "solo-queue"
+        };
     }
 }

@@ -64,6 +64,8 @@
         "Dont",
         "dtls",
         "interactable",
+        "Matchmake",
+        "Multiplay",
         "Netcode"
     ]
 }
